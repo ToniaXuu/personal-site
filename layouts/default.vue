@@ -6,6 +6,7 @@
     </main>
     <LayoutAppFooter />
     <LayoutBackToTop />
+    <EffectsParticleBackground />
     <EffectsGridBackground />
   </div>
 </template>

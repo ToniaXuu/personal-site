@@ -5,5 +5,6 @@
     <ResumeTimelineSection />
     <ResumeSkillsSection />
     <ResumeProjectsSection />
+    <ResumeNewsSection />
   </div>
 </template>

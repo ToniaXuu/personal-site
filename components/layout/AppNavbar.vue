@@ -17,6 +17,7 @@
         <NuxtLink to="/#experience" class="nav-link">经历</NuxtLink>
         <NuxtLink to="/#skills" class="nav-link">技能</NuxtLink>
         <NuxtLink to="/#projects" class="nav-link">项目</NuxtLink>
+        <NuxtLink to="/#news" class="nav-link">动态</NuxtLink>
         <NuxtLink to="/blog" class="nav-link">博客</NuxtLink>
       </div>
 
@@ -52,6 +53,7 @@
         <NuxtLink to="/#experience" class="nav-link text-sm" @click="mobileOpen = false">经历</NuxtLink>
         <NuxtLink to="/#skills" class="nav-link text-sm" @click="mobileOpen = false">技能</NuxtLink>
         <NuxtLink to="/#projects" class="nav-link text-sm" @click="mobileOpen = false">项目</NuxtLink>
+        <NuxtLink to="/#news" class="nav-link text-sm" @click="mobileOpen = false">动态</NuxtLink>
         <NuxtLink to="/blog" class="nav-link text-sm" @click="mobileOpen = false">博客</NuxtLink>
         <a href="https://github.com/ToniaXuu" target="_blank" class="nav-link text-sm flex items-center gap-2">
           <Icon name="lucide:github" size="16" /> GitHub
