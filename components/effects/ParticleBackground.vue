@@ -16,9 +16,7 @@ const MAX_DIST = 140
 const COLORS = ['#06b6d4', '#a855f7', '#10b981']
 
 class Particle {
-  constructor() {
-    this.reset()
-  }
+  constructor() { this.reset() }
   reset() {
     this.x = Math.random() * w
     this.y = Math.random() * h
@@ -36,7 +34,6 @@ class Particle {
     if (this.y < -20) this.y = h + 20
     if (this.y > h + 20) this.y = -20
 
-    // mouse interaction
     const dx = mouse.x - this.x
     const dy = mouse.y - this.y
     const dist = Math.sqrt(dx * dx + dy * dy)
@@ -46,11 +43,11 @@ class Particle {
       this.y -= dy * force * 0.02
     }
   }
-  draw() {
+  draw(isDark) {
     ctx.beginPath()
     ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2)
     ctx.fillStyle = this.color
-    ctx.globalAlpha = this.opacity
+    ctx.globalAlpha = isDark ? this.opacity : this.opacity * 0.15
     ctx.fill()
   }
 }
@@ -60,9 +57,7 @@ function init() {
   ctx = canvas.value.getContext('2d')
   resize()
   particles.length = 0
-  for (let i = 0; i < PARTICLE_COUNT; i++) {
-    particles.push(new Particle())
-  }
+  for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle())
   animate()
 }
 
@@ -73,9 +68,9 @@ function resize() {
 }
 
 function animate() {
+  const isDark = document.documentElement.classList.contains('dark')
   ctx.clearRect(0, 0, w, h)
 
-  // draw connections
   for (let i = 0; i < particles.length; i++) {
     const p = particles[i]
     for (let j = i + 1; j < particles.length; j++) {
@@ -88,13 +83,13 @@ function animate() {
         ctx.moveTo(p.x, p.y)
         ctx.lineTo(q.x, q.y)
         ctx.strokeStyle = p.color
-        ctx.globalAlpha = (1 - dist / MAX_DIST) * 0.1
+        ctx.globalAlpha = isDark ? (1 - dist / MAX_DIST) * 0.1 : (1 - dist / MAX_DIST) * 0.03
         ctx.lineWidth = 0.5
         ctx.stroke()
       }
     }
     p.update()
-    p.draw()
+    p.draw(isDark)
   }
 
   ctx.globalAlpha = 1

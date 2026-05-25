@@ -1,7 +1,7 @@
 <template>
   <nav
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-    :class="scrolled ? 'bg-[#090a0f]/80 backdrop-blur-xl border-b border-white/[0.06]' : 'bg-transparent'"
+    :class="scrolled ? 'navbar-scrolled' : 'bg-transparent'"
   >
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <!-- Logo -->
@@ -21,19 +21,22 @@
         <NuxtLink to="/blog" class="nav-link">博客</NuxtLink>
       </div>
 
-      <!-- GitHub icon -->
-      <div class="flex items-center gap-3">
+      <!-- Right side -->
+      <div class="flex items-center gap-2">
         <a
           href="https://github.com/ToniaXuu"
           target="_blank"
-          class="hidden sm:flex w-8 h-8 rounded-lg items-center justify-center text-[#94a3b8] hover:text-white hover:bg-white/[0.06] transition-all"
+          class="hidden sm:flex w-8 h-8 rounded-lg items-center justify-center hover:bg-[var(--glass-hover)] transition-all"
+          style="color: var(--color-text-muted)"
           title="GitHub"
         >
           <Icon name="lucide:github" size="18" />
         </a>
+        <LayoutThemeSwitcher />
         <!-- Mobile menu button -->
         <button
-          class="sm:hidden p-2 text-[#94a3b8] hover:text-white transition-colors"
+          class="sm:hidden p-2 transition-colors"
+          style="color: var(--color-text-muted)"
           @click="mobileOpen = !mobileOpen"
         >
           <Icon v-if="!mobileOpen" name="lucide:menu" size="24" />
@@ -46,7 +49,7 @@
     <Transition name="slide-down">
       <div
         v-if="mobileOpen"
-        class="sm:hidden bg-[#090a0f]/95 backdrop-blur-xl border-b border-white/[0.06] px-6 py-4 flex flex-col gap-4"
+        class="sm:hidden navbar-scrolled px-6 py-4 flex flex-col gap-4"
       >
         <NuxtLink to="/" class="nav-link text-sm" @click="mobileOpen = false">首页</NuxtLink>
         <NuxtLink to="/#about" class="nav-link text-sm" @click="mobileOpen = false">关于</NuxtLink>

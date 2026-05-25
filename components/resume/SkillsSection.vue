@@ -11,7 +11,7 @@
           :key="i"
         >
           <UiGlassCard>
-            <h3 class="text-lg font-semibold text-[#f1f5f9] mb-4 flex items-center gap-2">
+            <h3 class="text-lg font-semibold mb-4 flex items-center gap-2" style="color: var(--color-text)">
               <Icon :name="group.icon" size="20" class="text-cyan-400" />
               {{ group.name }}
             </h3>

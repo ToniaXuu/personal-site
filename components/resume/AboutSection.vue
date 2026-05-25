@@ -8,11 +8,11 @@
       <UiAnimatedSection>
         <UiGlassCard>
           <div class="flex flex-col sm:flex-row gap-8 items-start">
-            <!-- 头像 -->
+            <!-- Avatar -->
             <div class="w-28 h-28 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-4xl font-bold shrink-0 shadow-lg shadow-cyan-500/10">
               T
             </div>
-            <div class="flex-1 text-[#cbd5e1] leading-relaxed space-y-4">
+            <div class="flex-1 leading-relaxed space-y-4" style="color: var(--color-text-muted)">
               <p>
                 Full Stack Developer，拥有 <span class="text-cyan-400 font-medium">5 年</span> Web 开发经验。
                 具备扎实的前后端开发能力，从数据库设计、后端 API 开发到前端页面实现，能够独立打通全链路业务闭环。
@@ -25,7 +25,7 @@
               <p>
                 工作之余，热衷于探索新技术，持续学习并分享技术心得。追求代码质量与用户体验的完美平衡。
               </p>
-              <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-[#94a3b8]">
+              <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm" style="color: var(--color-text-muted)">
                 <span class="flex items-center gap-1.5">
                   <Icon name="lucide:briefcase" size="16" class="text-purple-400/60" />
                   5 年经验

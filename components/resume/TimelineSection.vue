@@ -62,35 +62,37 @@ const experiences = [
           v-for="(item, i) in experiences"
           :key="i"
         >
-          <UiGlassCard class="relative">
-            <div class="timeline-line">
-              <div class="timeline-dot" />
-              <span class="text-xs font-medium text-cyan-400 mb-2 block">
-                {{ item.period }}
-              </span>
-              <h3 class="text-xl font-semibold text-[#f1f5f9] mb-1">
-                {{ item.title }}
-              </h3>
-              <p class="text-sm text-purple-400 mb-3">
-                {{ item.company }}
-              </p>
-              <ul class="text-[#94a3b8] text-sm leading-relaxed space-y-1.5">
-                <li v-for="(desc, j) in item.descriptions" :key="j" class="flex gap-2">
-                  <span class="text-cyan-400/50 mt-1 shrink-0">&#8226;</span>
-                  <span>{{ desc }}</span>
-                </li>
-              </ul>
-              <div v-if="item.tags" class="flex flex-wrap gap-2 mt-4">
-                <span
-                  v-for="tag in item.tags"
-                  :key="tag"
-                  class="skill-tag"
-                >
-                  {{ tag }}
+          <NuxtLink :to="`/detail/experience/${i}`" class="block group">
+            <UiGlassCard class="relative">
+              <div class="timeline-line">
+                <div class="timeline-dot" />
+                <span class="text-xs font-medium text-cyan-400 mb-2 block">
+                  {{ item.period }}
                 </span>
+                <h3 class="text-xl font-semibold mb-1" style="color: var(--color-text)">
+                  {{ item.title }}
+                </h3>
+                <p class="text-sm text-purple-400 mb-3">
+                  {{ item.company }}
+                </p>
+                <ul class="text-sm leading-relaxed space-y-1.5" style="color: var(--color-text-muted)">
+                  <li v-for="(desc, j) in item.descriptions" :key="j" class="flex gap-2">
+                    <span class="text-cyan-400/50 mt-1 shrink-0">&#8226;</span>
+                    <span>{{ desc }}</span>
+                  </li>
+                </ul>
+                <div v-if="item.tags" class="flex flex-wrap gap-2 mt-4">
+                  <span v-for="tag in item.tags" :key="tag" class="skill-tag">
+                    {{ tag }}
+                  </span>
+                </div>
+                <div class="mt-4 flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-cyan)">
+                  <span>查看详情</span>
+                  <Icon name="lucide:arrow-right" size="14" />
+                </div>
               </div>
-            </div>
-          </UiGlassCard>
+            </UiGlassCard>
+          </NuxtLink>
         </UiAnimatedSection>
       </div>
     </div>

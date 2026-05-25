@@ -1,9 +1,9 @@
 <template>
   <div class="mb-12">
-    <h2 class="text-3xl sm:text-4xl font-bold text-[#f1f5f9] mb-3">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-3" style="color: var(--color-text)">
       {{ title }}
     </h2>
-    <p v-if="subtitle" class="text-[#94a3b8] text-lg">
+    <p v-if="subtitle" class="text-lg" style="color: var(--color-text-muted)">
       {{ subtitle }}
     </p>
     <div class="mt-4 h-px w-16 bg-gradient-to-r from-cyan-400 to-purple-500" />

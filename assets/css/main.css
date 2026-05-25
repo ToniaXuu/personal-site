@@ -2,17 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== 全局基础 ===== */
+/* ===== 浅色主题变量 ===== */
 :root {
+  --color-bg: #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8;
+  --color-accent-cyan: #0891b2;
+  --color-accent-purple: #7c3aed;
+  --color-accent-emerald: #059669;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-bg-strong: rgba(255, 255, 255, 0.85);
+  --glass-hover: rgba(0, 0, 0, 0.03);
+  --accent-glow: rgba(8, 145, 178, 0.06);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 8px 30px rgba(0,0,0,0.08);
+  --particle-opacity: 0.15;
+  --grid-opacity: 0.03;
+  --divider-color: rgba(0, 0, 0, 0.06);
+  --scrollbar-bg: #f8fafc;
+  --scrollbar-thumb: rgba(0, 0, 0, 0.15);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.25);
+  --selection-bg: rgba(8, 145, 178, 0.2);
+  --selection-text: #0f172a;
+  --prose-body: #334155;
+  --prose-headings: #0f172a;
+  --prose-links: #0891b2;
+  --prose-code: #7c3aed;
+  --prose-pre-bg: rgba(0, 0, 0, 0.03);
+  --prose-pre-border: rgba(0, 0, 0, 0.06);
+  --skill-tag-bg: rgba(0, 0, 0, 0.03);
+  --skill-tag-text: #475569;
+  --hero-fade: linear-gradient(to bottom, transparent, #f8fafc);
+  --timeline-line: rgba(0, 0, 0, 0.08);
+}
+
+/* ===== 深色主题变量 ===== */
+:root.dark {
   --color-bg: #090a0f;
+  --color-bg-secondary: #0d0e14;
   --color-text: #f1f5f9;
   --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
   --color-accent-cyan: #06b6d4;
   --color-accent-purple: #a855f7;
   --color-accent-emerald: #10b981;
   --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(255, 255, 255, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-bg-strong: rgba(15, 15, 25, 0.85);
+  --glass-hover: rgba(255, 255, 255, 0.06);
+  --accent-glow: rgba(6, 182, 212, 0.08);
+  --shadow-card: 0 0 0 rgba(0,0,0,0);
+  --shadow-card-hover: 0 8px 30px rgba(0,0,0,0.3);
+  --particle-opacity: 1;
+  --grid-opacity: 0.015;
+  --divider-color: rgba(255, 255, 255, 0.06);
+  --scrollbar-bg: #090a0f;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+  --selection-bg: rgba(6, 182, 212, 0.3);
+  --selection-text: #f1f5f9;
+  --prose-body: #e2e8f0;
+  --prose-headings: #f1f5f9;
+  --prose-links: #06b6d4;
+  --prose-code: #a855f7;
+  --prose-pre-bg: rgba(255, 255, 255, 0.03);
+  --prose-pre-border: rgba(255, 255, 255, 0.06);
+  --skill-tag-bg: rgba(255, 255, 255, 0.03);
+  --skill-tag-text: #cbd5e1;
+  --hero-fade: linear-gradient(to bottom, transparent, #090a0f);
+  --timeline-line: rgba(255, 255, 255, 0.06);
 }
 
+/* ===== 全局基础 ===== */
 * {
   margin: 0;
   padding: 0;
@@ -32,12 +98,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ===== 选中文字样式 ===== */
 ::selection {
-  background: rgba(6, 182, 212, 0.3);
-  color: #f1f5f9;
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 /* ===== 滚动条 ===== */
@@ -45,26 +111,20 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: var(--scrollbar-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--scrollbar-thumb);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--scrollbar-thumb-hover);
 }
 
-/* ===== 全局动画工具类 ===== */
+/* ===== 全局动画 ===== */
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes gradient-shift {
@@ -92,19 +152,20 @@ body {
 
 /* ===== 毛玻璃组件 ===== */
 .glass-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--glass-bg);
   border: 1px solid var(--color-border);
   border-radius: 16px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s ease;
+  box-shadow: var(--shadow-card);
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: var(--glass-hover);
+  border-color: var(--color-border-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-card-hover);
 }
 
 /* ===== 渐变文字 ===== */
@@ -121,23 +182,21 @@ body {
   inset: 0;
   z-index: -1;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(var(--grid-opacity) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-opacity) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, black, transparent);
 }
 
-/* ===== 导航链接下划线动效 ===== */
+/* ===== 导航链接 ===== */
 .nav-link {
   position: relative;
   color: var(--color-text-muted);
   transition: color 0.3s;
 }
-
 .nav-link:hover {
   color: var(--color-text);
 }
-
 .nav-link::after {
   content: '';
   position: absolute;
@@ -148,7 +207,6 @@ body {
   background: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-purple));
   transition: width 0.3s ease;
 }
-
 .nav-link:hover::after,
 .nav-link.router-link-exact-active::after {
   width: 100%;
@@ -158,7 +216,7 @@ body {
 .timeline-line {
   position: relative;
   padding-left: 2rem;
-  border-left: 1px solid var(--color-border);
+  border-left: 1px solid var(--timeline-line);
 }
 
 .timeline-dot {
@@ -175,13 +233,21 @@ body {
 
 /* ===== Blog 文章样式 ===== */
 .blog-prose {
-  @apply prose prose-invert max-w-none;
-  --tw-prose-body: #e2e8f0;
-  --tw-prose-headings: #f1f5f9;
-  --tw-prose-links: #06b6d4;
-  --tw-prose-code: #a855f7;
-  --tw-prose-pre-bg: rgba(255, 255, 255, 0.03);
-  --tw-prose-pre-border: rgba(255, 255, 255, 0.06);
+  @apply prose max-w-none;
+  --tw-prose-body: var(--prose-body);
+  --tw-prose-headings: var(--prose-headings);
+  --tw-prose-links: var(--prose-links);
+  --tw-prose-code: var(--prose-code);
+  --tw-prose-pre-bg: var(--prose-pre-bg);
+  --tw-prose-pre-border: var(--prose-pre-border);
+  --tw-prose-bold: var(--color-text);
+  --tw-prose-counters: var(--color-text-muted);
+  --tw-prose-bullets: var(--color-text-muted);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-text-muted);
+  --tw-prose-quote-borders: var(--color-accent-cyan);
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
 }
 
 /* ===== 技能标签 ===== */
@@ -193,11 +259,10 @@ body {
   font-weight: 500;
   border-radius: 9999px;
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--skill-tag-bg);
   transition: all 0.3s ease;
-  color: #cbd5e1;
+  color: var(--skill-tag-text);
 }
-
 .skill-tag:hover {
   border-color: var(--color-accent-cyan);
   background: rgba(6, 182, 212, 0.08);
@@ -205,12 +270,10 @@ body {
   transform: translateY(-1px);
 }
 
-/* ===== 平滑区域过渡 ===== */
+/* ===== 区域分隔线 ===== */
 section {
   position: relative;
 }
-
-/* ===== 分隔渐变线 ===== */
 section + section::before {
   content: '';
   position: absolute;
@@ -219,5 +282,13 @@ section + section::before {
   transform: translateX(-50%);
   width: min(200px, 60%);
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  background: linear-gradient(90deg, transparent, var(--divider-color), transparent);
+}
+
+/* ===== 导航栏滚动状态 ===== */
+.navbar-scrolled {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
 }

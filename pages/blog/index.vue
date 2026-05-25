@@ -10,13 +10,39 @@
           v-for="post in posts"
           :key="post._path"
         >
-          <NuxtLink :to="post._path" class="block">
-            <BlogBlogCard :post="post" />
+          <NuxtLink :to="post._path" class="block group">
+            <UiGlassCard class="h-full flex flex-col">
+              <!-- Tags -->
+              <div v-if="post.tags?.length" class="flex flex-wrap gap-1.5 mb-3">
+                <span
+                  v-for="tag in post.tags"
+                  :key="tag"
+                  class="text-xs px-2 py-0.5 rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+              <!-- Title -->
+              <h3 class="text-lg font-semibold mb-2 group-hover:text-cyan-400 transition-colors" style="color: var(--color-text)">
+                {{ post.title }}
+              </h3>
+              <!-- Description -->
+              <p class="text-sm leading-relaxed mb-4 flex-1 line-clamp-2" style="color: var(--color-text-muted)">
+                {{ post.description }}
+              </p>
+              <!-- Date + arrow -->
+              <div class="flex items-center justify-between">
+                <time class="text-xs" style="color: var(--color-text-subtle)">
+                  {{ formatDate(post.date) }}
+                </time>
+                <Icon name="lucide:arrow-right" size="14" class="opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-cyan)" />
+              </div>
+            </UiGlassCard>
           </NuxtLink>
         </UiAnimatedSection>
       </div>
 
-      <div v-else class="text-center py-20 text-[#64748b]">
+      <div v-else class="text-center py-20" style="color: var(--color-text-muted)">
         <Icon name="lucide:file-text" size="48" class="mx-auto mb-4 opacity-30" />
         <p>暂无文章</p>
       </div>
@@ -30,4 +56,10 @@ const { data: posts } = await useAsyncData('blog-posts', () =>
     .sort({ date: -1 })
     .find()
 )
+
+const formatDate = (d) => {
+  if (!d) return ''
+  const date = new Date(d)
+  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
+}
 </script>

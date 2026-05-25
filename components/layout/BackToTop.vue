@@ -2,8 +2,11 @@
   <Transition name="fade">
     <button
       v-show="visible"
-      class="fixed bottom-8 right-8 z-40 w-10 h-10 rounded-full glass-card flex items-center justify-center text-[#94a3b8] hover:text-white hover:border-white/20 transition-all"
+      class="fixed bottom-8 right-8 z-40 w-10 h-10 rounded-full glass-card flex items-center justify-center transition-all"
+      style="color: var(--color-text-muted)"
       @click="scrollToTop"
+      @mouseenter="$event.currentTarget.style.color = 'var(--color-text)'"
+      @mouseleave="$event.currentTarget.style.color = 'var(--color-text-muted)'"
     >
       <Icon name="lucide:arrow-up" size="18" />
     </button>
@@ -26,11 +29,7 @@ onMounted(() => {
 
 <style scoped>
 .fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
+.fade-leave-active { transition: opacity 0.3s ease; }
 .fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
+.fade-leave-to { opacity: 0; }
 </style>

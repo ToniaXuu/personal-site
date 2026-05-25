@@ -87,37 +87,43 @@ const projects = [
           v-for="(project, i) in projects"
           :key="i"
         >
-          <UiGlassCard class="h-full flex flex-col group">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Icon :name="project.icon" size="20" class="text-cyan-400" />
+          <NuxtLink :to="`/detail/project/${i}`" class="block group">
+            <UiGlassCard class="h-full flex flex-col">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Icon :name="project.icon" size="20" class="text-cyan-400" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold" style="color: var(--color-text)">{{ project.name }}</h3>
+                  <span class="text-xs" style="color: var(--color-text-subtle)">{{ project.role }}</span>
+                </div>
               </div>
-              <div>
-                <h3 class="text-lg font-semibold text-[#f1f5f9]">{{ project.name }}</h3>
-                <span class="text-xs text-[#64748b]">{{ project.role }}</span>
+              <p class="text-sm leading-relaxed mb-4 flex-1" style="color: var(--color-text-muted)">
+                {{ project.description }}
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  v-for="tag in project.tags"
+                  :key="tag"
+                  class="skill-tag"
+                >
+                  {{ tag }}
+                </span>
               </div>
-            </div>
-            <p class="text-[#94a3b8] text-sm leading-relaxed mb-4 flex-1">
-              {{ project.description }}
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                v-for="tag in project.tags"
-                :key="tag"
-                class="skill-tag"
-              >
-                {{ tag }}
-              </span>
-            </div>
-            <div v-if="project.highlights" class="border-t border-white/[0.06] pt-3 mb-3">
-              <ul class="text-xs text-[#94a3b8] space-y-1">
-                <li v-for="(h, j) in project.highlights" :key="j" class="flex gap-1.5">
-                  <Icon name="lucide:check" size="12" class="text-emerald-400 mt-0.5 shrink-0" />
-                  <span>{{ h }}</span>
-                </li>
-              </ul>
-            </div>
-          </UiGlassCard>
+              <div class="pt-3 mb-3" style="border-top: 1px solid var(--color-border)">
+                <ul class="text-xs space-y-1" style="color: var(--color-text-muted)">
+                  <li v-for="(h, j) in project.highlights" :key="j" class="flex gap-1.5">
+                    <Icon name="lucide:check" size="12" class="text-emerald-400 mt-0.5 shrink-0" />
+                    <span>{{ h }}</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-cyan)">
+                <span>查看详情</span>
+                <Icon name="lucide:arrow-right" size="14" />
+              </div>
+            </UiGlassCard>
+          </NuxtLink>
         </UiAnimatedSection>
       </div>
     </div>

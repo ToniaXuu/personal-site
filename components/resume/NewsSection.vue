@@ -7,22 +7,39 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <UiAnimatedSection v-for="(item, i) in news" :key="i">
-          <UiGlassCard class="h-full flex flex-col group">
-            <!-- 日期标签 -->
+          <NuxtLink v-if="item.link" :to="item.link" class="block group">
+            <UiGlassCard class="h-full flex flex-col">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-medium text-cyan-400/80">{{ item.date }}</span>
+                <span class="text-xs px-2 py-0.5 rounded-full border" :class="item.typeClass">{{ item.type }}</span>
+              </div>
+              <h3 class="text-base font-semibold mb-2 group-hover:text-cyan-400 transition-colors" style="color: var(--color-text)">
+                {{ item.title }}
+              </h3>
+              <p class="text-sm leading-relaxed flex-1 mb-4" style="color: var(--color-text-muted)">
+                {{ item.summary }}
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-xs" style="color: var(--color-text-subtle)">
+                  <Icon :name="item.icon" size="14" class="text-cyan-400/50" />
+                  <span>{{ item.source }}</span>
+                </div>
+                <Icon name="lucide:arrow-right" size="14" class="opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-cyan)" />
+              </div>
+            </UiGlassCard>
+          </NuxtLink>
+          <UiGlassCard v-else class="h-full flex flex-col">
             <div class="flex items-center justify-between mb-3">
               <span class="text-xs font-medium text-cyan-400/80">{{ item.date }}</span>
               <span class="text-xs px-2 py-0.5 rounded-full border" :class="item.typeClass">{{ item.type }}</span>
             </div>
-            <!-- 标题 -->
-            <h3 class="text-base font-semibold text-[#f1f5f9] mb-2 group-hover:text-cyan-400 transition-colors">
+            <h3 class="text-base font-semibold mb-2" style="color: var(--color-text)">
               {{ item.title }}
             </h3>
-            <!-- 摘要 -->
-            <p class="text-[#94a3b8] text-sm leading-relaxed flex-1 mb-4">
+            <p class="text-sm leading-relaxed flex-1 mb-4" style="color: var(--color-text-muted)">
               {{ item.summary }}
             </p>
-            <!-- 底部信息 -->
-            <div class="flex items-center gap-2 text-xs text-[#64748b]">
+            <div class="flex items-center gap-2 text-xs" style="color: var(--color-text-subtle)">
               <Icon :name="item.icon" size="14" class="text-cyan-400/50" />
               <span>{{ item.source }}</span>
             </div>
@@ -70,6 +87,7 @@ const news = [
     typeClass: 'border-amber-400/30 text-amber-400 bg-amber-400/5',
     icon: 'lucide:file-text',
     source: 'ToniaXuu Blog',
+    link: '/blog/ai-agent-comparison-2026',
   },
   {
     date: '2026-04',

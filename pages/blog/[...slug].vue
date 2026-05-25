@@ -1,18 +1,18 @@
 <template>
   <section class="pt-24 pb-20">
     <article class="max-w-3xl mx-auto px-6">
-      <!-- 返回 -->
-      <NuxtLink to="/blog" class="inline-flex items-center gap-1.5 text-sm text-[#64748b] hover:text-[#94a3b8] transition-colors mb-8">
+      <!-- Back -->
+      <NuxtLink to="/blog" class="inline-flex items-center gap-1.5 text-sm mb-8 transition-colors" style="color: var(--color-text-muted)">
         <Icon name="lucide:arrow-left" size="16" />
         返回博客列表
       </NuxtLink>
 
-      <!-- 文章头部 -->
+      <!-- Header -->
       <header class="mb-10">
-        <h1 class="text-3xl sm:text-4xl font-bold text-[#f1f5f9] mb-4">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4" style="color: var(--color-text)">
           {{ page?.title }}
         </h1>
-        <div class="flex items-center gap-4 text-sm text-[#64748b]">
+        <div class="flex items-center gap-4 text-sm" style="color: var(--color-text-muted)">
           <time v-if="page?.date">
             {{ formatDate(page.date) }}
           </time>
@@ -28,13 +28,13 @@
         </div>
       </header>
 
-      <!-- 文章内容 -->
+      <!-- Content -->
       <div class="blog-prose">
         <ContentRenderer v-if="page" :value="page" />
       </div>
 
-      <!-- 分隔线 -->
-      <div class="mt-16 pt-8 border-t border-white/[0.06] text-center">
+      <!-- Divider -->
+      <div class="mt-16 pt-8 text-center" style="border-top: 1px solid var(--color-border)">
         <NuxtLink to="/blog" class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
           查看全部文章
         </NuxtLink>
