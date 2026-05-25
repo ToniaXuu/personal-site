@@ -10,11 +10,11 @@
           <div class="flex flex-col sm:flex-row gap-8 items-start">
             <!-- 头像 -->
             <div class="w-28 h-28 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-4xl font-bold shrink-0 shadow-lg shadow-cyan-500/10">
-              X
+              T
             </div>
             <div class="flex-1 text-[#cbd5e1] leading-relaxed space-y-4">
               <p>
-                全栈工程师，拥有 <span class="text-cyan-400 font-medium">5 年</span> Web 开发经验。
+                Full Stack Developer，拥有 <span class="text-cyan-400 font-medium">5 年</span> Web 开发经验。
                 具备扎实的前后端开发能力，从数据库设计、后端 API 开发到前端页面实现，能够独立打通全链路业务闭环。
               </p>
               <p>
@@ -27,10 +27,6 @@
               </p>
               <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-[#94a3b8]">
                 <span class="flex items-center gap-1.5">
-                  <Icon name="lucide:map-pin" size="16" class="text-cyan-400/60" />
-                  济南
-                </span>
-                <span class="flex items-center gap-1.5">
                   <Icon name="lucide:briefcase" size="16" class="text-purple-400/60" />
                   5 年经验
                 </span>
@@ -38,24 +34,10 @@
                   <Icon name="lucide:graduation-cap" size="16" class="text-emerald-400/60" />
                   本科 · 计算机科学与技术
                 </span>
-              </div>
-
-              <!-- 教育背景 -->
-              <div class="mt-4 pt-4 border-t border-white/[0.06]">
-                <h4 class="text-sm font-semibold text-[#f1f5f9] mb-3 flex items-center gap-2">
-                  <Icon name="lucide:graduation-cap" size="16" class="text-cyan-400" />
-                  教育背景
-                </h4>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  <div class="flex flex-col">
-                    <span class="text-[#f1f5f9] font-medium">滨州学院</span>
-                    <span class="text-[#94a3b8]">本科 · 计算机科学与技术 · 2022-2024</span>
-                  </div>
-                  <div class="flex flex-col">
-                    <span class="text-[#f1f5f9] font-medium">潍坊工程职业学院</span>
-                    <span class="text-[#94a3b8]">大专 · 计算机应用技术 · 2019-2022</span>
-                  </div>
-                </div>
+                <span class="flex items-center gap-1.5">
+                  <Icon name="lucide:github" size="16" class="text-cyan-400/60" />
+                  <a href="https://github.com/ToniaXuu" target="_blank" class="hover:text-cyan-400 transition-colors">ToniaXuu</a>
+                </span>
               </div>
             </div>
           </div>

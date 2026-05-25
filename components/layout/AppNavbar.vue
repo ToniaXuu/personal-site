@@ -6,8 +6,8 @@
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <!-- Logo -->
       <NuxtLink to="/" class="text-lg font-bold gradient-text flex items-center gap-2">
-        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold">X</span>
-        YueTonia
+        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold">T</span>
+        ToniaXuu
       </NuxtLink>
 
       <!-- Links -->

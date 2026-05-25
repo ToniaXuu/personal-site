@@ -6,14 +6,14 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: '徐岳童 | 全栈工程师 - YueTonia',
+      title: 'ToniaXuu | Full Stack Developer',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: '徐岳童 - 全栈工程师，5年开发经验，专注 Vue/Java/微服务开发，构建高性能Web应用。' },
-        { name: 'keywords', content: '徐岳童, 全栈工程师, Vue, Java, Spring Boot, 前端开发, 后端开发' },
-        { property: 'og:title', content: '徐岳童 | 全栈工程师' },
-        { property: 'og:description', content: '5年全栈开发经验，专注 Vue/Java/微服务架构开发' },
+        { name: 'description', content: 'ToniaXuu - Full Stack Developer, 5 years of experience in Vue/Java/Microservices.' },
+        { name: 'keywords', content: 'ToniaXuu, Full Stack Developer, Vue, Java, Spring Boot, Frontend, Backend' },
+        { property: 'og:title', content: 'ToniaXuu | Full Stack Developer' },
+        { property: 'og:description', content: '5 years full stack development experience, focused on Vue/Java/Microservices architecture' },
         { property: 'og:type', content: 'website' },
       ],
       link: [

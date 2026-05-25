@@ -18,7 +18,7 @@
       <h1 class="text-5xl sm:text-7xl font-extrabold text-[#f1f5f9] mb-6 leading-tight">
         Hi, I'm
         <span class="block mt-2 gradient-text">
-          YueTonia
+          ToniaXuu
         </span>
       </h1>
 
