@@ -6,13 +6,14 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: '个人简历 - Your Name',
+      title: '徐岳童 | 全栈工程师 - YueTonia',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: '个人简历与博客站点' },
-        { property: 'og:title', content: '个人简历 - Your Name' },
-        { property: 'og:description', content: '个人简历与博客站点' },
+        { name: 'description', content: '徐岳童 - 全栈工程师，5年开发经验，专注 Vue/Java/微服务开发，构建高性能Web应用。' },
+        { name: 'keywords', content: '徐岳童, 全栈工程师, Vue, Java, Spring Boot, 前端开发, 后端开发' },
+        { property: 'og:title', content: '徐岳童 | 全栈工程师' },
+        { property: 'og:description', content: '5年全栈开发经验，专注 Vue/Java/微服务架构开发' },
         { property: 'og:type', content: 'website' },
       ],
       link: [

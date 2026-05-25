@@ -5,8 +5,9 @@
   >
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <!-- Logo -->
-      <NuxtLink to="/" class="text-lg font-bold gradient-text">
-        Portfolio
+      <NuxtLink to="/" class="text-lg font-bold gradient-text flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold">X</span>
+        YueTonia
       </NuxtLink>
 
       <!-- Links -->
@@ -19,14 +20,25 @@
         <NuxtLink to="/blog" class="nav-link">博客</NuxtLink>
       </div>
 
-      <!-- Mobile menu button -->
-      <button
-        class="sm:hidden p-2 text-[#94a3b8] hover:text-white transition-colors"
-        @click="mobileOpen = !mobileOpen"
-      >
-        <Icon v-if="!mobileOpen" name="lucide:menu" size="24" />
-        <Icon v-else name="lucide:x" size="24" />
-      </button>
+      <!-- GitHub icon -->
+      <div class="flex items-center gap-3">
+        <a
+          href="https://github.com/ToniaXuu"
+          target="_blank"
+          class="hidden sm:flex w-8 h-8 rounded-lg items-center justify-center text-[#94a3b8] hover:text-white hover:bg-white/[0.06] transition-all"
+          title="GitHub"
+        >
+          <Icon name="lucide:github" size="18" />
+        </a>
+        <!-- Mobile menu button -->
+        <button
+          class="sm:hidden p-2 text-[#94a3b8] hover:text-white transition-colors"
+          @click="mobileOpen = !mobileOpen"
+        >
+          <Icon v-if="!mobileOpen" name="lucide:menu" size="24" />
+          <Icon v-else name="lucide:x" size="24" />
+        </button>
+      </div>
     </div>
 
     <!-- Mobile menu -->
@@ -41,6 +53,9 @@
         <NuxtLink to="/#skills" class="nav-link text-sm" @click="mobileOpen = false">技能</NuxtLink>
         <NuxtLink to="/#projects" class="nav-link text-sm" @click="mobileOpen = false">项目</NuxtLink>
         <NuxtLink to="/blog" class="nav-link text-sm" @click="mobileOpen = false">博客</NuxtLink>
+        <a href="https://github.com/ToniaXuu" target="_blank" class="nav-link text-sm flex items-center gap-2">
+          <Icon name="lucide:github" size="16" /> GitHub
+        </a>
       </div>
     </Transition>
   </nav>

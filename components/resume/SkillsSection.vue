@@ -34,24 +34,24 @@
 <script setup>
 const skillGroups = [
   {
-    name: '前端框架',
+    name: '前端技术',
     icon: 'lucide:layout',
-    skills: ['Vue 3', 'React', 'Nuxt', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Pinia', 'Redux'],
+    skills: ['Vue 2', 'Vue 3', 'Nuxt', 'React', 'Element UI', 'Element Plus', 'ECharts', 'Axios', 'Tailwind CSS', 'HTML/CSS', 'JavaScript'],
   },
   {
-    name: '后端 & 数据库',
+    name: '后端技术',
     icon: 'lucide:server',
-    skills: ['Node.js', 'Express', 'NestJS', 'PostgreSQL', 'MongoDB', 'Redis', 'Prisma'],
+    skills: ['Java', 'Spring Boot', 'Spring Cloud', 'Spring MVC', 'MyBatis', 'MyBatis Plus', 'RESTful API'],
   },
   {
-    name: '工具 & 运维',
+    name: '数据库 & 中间件',
+    icon: 'lucide:database',
+    skills: ['MySQL', 'Oracle', 'KingBaseES', 'Redis', 'Quartz', 'PowerJob'],
+  },
+  {
+    name: '工具 & 其他',
     icon: 'lucide:wrench',
-    skills: ['Git', 'Docker', 'Vercel', 'CI/CD', 'Nginx', 'Linux', 'Webpack/Vite'],
-  },
-  {
-    name: '设计 & 其他',
-    icon: 'lucide:palette',
-    skills: ['Figma', 'Responsive Design', 'Agile/Scrum', 'RESTful API', 'GraphQL'],
+    skills: ['Git', 'Linux', 'Maven', 'Vite', 'Nginx', 'Tauri', 'Rust'],
   },
 ]
 </script>

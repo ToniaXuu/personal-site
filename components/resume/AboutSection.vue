@@ -8,32 +8,54 @@
       <UiAnimatedSection>
         <UiGlassCard>
           <div class="flex flex-col sm:flex-row gap-8 items-start">
-            <!-- 头像占位 -->
-            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-3xl font-bold shrink-0">
-              Y
+            <!-- 头像 -->
+            <div class="w-28 h-28 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-4xl font-bold shrink-0 shadow-lg shadow-cyan-500/10">
+              X
             </div>
             <div class="flex-1 text-[#cbd5e1] leading-relaxed space-y-4">
               <p>
-                一名充满热情的 Full Stack 开发者，拥有 X 年 Web 开发经验。
-                热衷于探索前沿技术，追求代码质量与用户体验的完美平衡。
+                全栈工程师，拥有 <span class="text-cyan-400 font-medium">5 年</span> Web 开发经验。
+                具备扎实的前后端开发能力，从数据库设计、后端 API 开发到前端页面实现，能够独立打通全链路业务闭环。
               </p>
               <p>
-                目前专注于 Vue 3 / Nuxt 生态、React / Next.js 以及 Node.js 后端开发。
-                在业余时间喜欢写技术博客，分享自己的学习与思考。
+                熟悉 <span class="text-purple-400 font-medium">Vue 3 / Spring Boot / Spring Cloud</span> 技术栈，
+                拥有微服务架构开发经验。对碳排放管理、政务平台、物流系统等企业级 B 端系统有丰富的实战经验，
+                擅长可视化大屏开发与数据驱动的前端展示。
               </p>
-              <div class="flex gap-6 pt-2 text-sm text-[#94a3b8]">
+              <p>
+                工作之余，热衷于探索新技术，持续学习并分享技术心得。追求代码质量与用户体验的完美平衡。
+              </p>
+              <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-[#94a3b8]">
                 <span class="flex items-center gap-1.5">
-                  <Icon name="lucide:map-pin" size="16" />
-                  北京 / 上海
+                  <Icon name="lucide:map-pin" size="16" class="text-cyan-400/60" />
+                  济南
                 </span>
                 <span class="flex items-center gap-1.5">
-                  <Icon name="lucide:briefcase" size="16" />
-                  X 年经验
+                  <Icon name="lucide:briefcase" size="16" class="text-purple-400/60" />
+                  5 年经验
                 </span>
                 <span class="flex items-center gap-1.5">
-                  <Icon name="lucide:mail" size="16" />
-                  hello@example.com
+                  <Icon name="lucide:graduation-cap" size="16" class="text-emerald-400/60" />
+                  本科 · 计算机科学与技术
                 </span>
+              </div>
+
+              <!-- 教育背景 -->
+              <div class="mt-4 pt-4 border-t border-white/[0.06]">
+                <h4 class="text-sm font-semibold text-[#f1f5f9] mb-3 flex items-center gap-2">
+                  <Icon name="lucide:graduation-cap" size="16" class="text-cyan-400" />
+                  教育背景
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <div class="flex flex-col">
+                    <span class="text-[#f1f5f9] font-medium">滨州学院</span>
+                    <span class="text-[#94a3b8]">本科 · 计算机科学与技术 · 2022-2024</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="text-[#f1f5f9] font-medium">潍坊工程职业学院</span>
+                    <span class="text-[#94a3b8]">大专 · 计算机应用技术 · 2019-2022</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

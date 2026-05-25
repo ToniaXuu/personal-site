@@ -10,14 +10,15 @@
           v-for="(project, i) in projects"
           :key="i"
         >
-          <UiGlassCard class="h-full flex flex-col">
+          <UiGlassCard class="h-full flex flex-col group">
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center">
+              <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Icon :name="project.icon" size="20" class="text-cyan-400" />
               </div>
-              <h3 class="text-lg font-semibold text-[#f1f5f9]">
-                {{ project.name }}
-              </h3>
+              <div>
+                <h3 class="text-lg font-semibold text-[#f1f5f9]">{{ project.name }}</h3>
+                <span class="text-xs text-[#64748b]">{{ project.role }}</span>
+              </div>
             </div>
             <p class="text-[#94a3b8] text-sm leading-relaxed mb-4 flex-1">
               {{ project.description }}
@@ -31,15 +32,14 @@
                 {{ tag }}
               </span>
             </div>
-            <a
-              v-if="project.link"
-              :href="project.link"
-              target="_blank"
-              class="inline-flex items-center gap-1.5 text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
-              <Icon name="lucide:external-link" size="14" />
-              查看项目
-            </a>
+            <div v-if="project.highlights" class="border-t border-white/[0.06] pt-3 mb-3">
+              <ul class="text-xs text-[#94a3b8] space-y-1">
+                <li v-for="(h, j) in project.highlights" :key="j" class="flex gap-1.5">
+                  <Icon name="lucide:check" size="12" class="text-emerald-400 mt-0.5 shrink-0" />
+                  <span>{{ h }}</span>
+                </li>
+              </ul>
+            </div>
           </UiGlassCard>
         </UiAnimatedSection>
       </div>
@@ -50,32 +50,76 @@
 <script setup>
 const projects = [
   {
-    name: '个人博客系统',
-    icon: 'lucide:book-open',
-    description: '基于 Nuxt 3 + @nuxt/content 的静态博客，支持 Markdown 写作、标签分类与暗色主题。',
-    tags: ['Nuxt 3', 'Vue 3', 'Tailwind CSS'],
-    link: '#',
+    name: '国投碳管理系统',
+    role: '全栈开发 · 2025',
+    icon: 'lucide:leaf',
+    description: '面向国投子公司碳排放全过程管理的统一能碳平台，围绕数据采集、排放核算、指标管理、报告填报及考核评价等核心业务，实现碳数据的标准化、流程化与可视化。',
+    tags: ['Spring Cloud', 'Vue 3', 'Element Plus', 'ECharts', 'KingBaseES', 'Redis'],
+    highlights: [
+      '基于国家发改委24项企业温室气体排放核算方法实现自动核算',
+      '可视化大屏开发，支持多维度碳排放数据分析',
+      'Quartz 定时任务实现自动化催报与考核评分',
+    ],
   },
   {
-    name: 'E-Commerce Dashboard',
-    icon: 'lucide:bar-chart-3',
-    description: '全栈电商后台管理系统，包含订单管理、商品管理、数据可视化等功能。',
-    tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    link: '#',
+    name: '党建 · 红岩青松',
+    role: '全栈开发 · 2024',
+    icon: 'lucide:landmark',
+    description: '面向老干部局的全流程数字化综合管理平台，实现从干部退休、荣誉审批到惠老服务、作用展示及治丧事务办理的闭环管理。',
+    tags: ['Spring Cloud', 'Vue 3', 'Element Plus', 'MySQL', 'PowerJob'],
+    highlights: [
+      '精准帮扶模块，对接医保局数据自动检测需帮扶对象',
+      '银发人才认定，实现多级审批流程',
+      '志愿服务积分激励机制',
+    ],
   },
   {
-    name: 'API 网关服务',
-    icon: 'lucide:cloud',
-    description: '基于 Node.js 的微服务 API 网关，实现路由分发、限流熔断与日志追踪。',
-    tags: ['Node.js', 'NestJS', 'Redis', 'Docker'],
-    link: '#',
+    name: '智管采购与生产一体化系统',
+    role: '全栈开发 · 2024',
+    icon: 'lucide:factory',
+    description: '实现客户和供应商的一体化管理，涵盖销售、采购、生产、库存等多个模块，跟踪生产流程，管理货运物流的配送与成本管控。',
+    tags: ['Spring Boot', 'Vue 3', 'Element Plus', 'MySQL', 'Quartz'],
+    highlights: [
+      '采购申请审核流程与采购订单计划生成',
+      '超期库存处理方案，Quartz 定时任务实现自动化',
+      '物资领用管理与资金报表编制',
+    ],
   },
   {
-    name: '组件库',
-    icon: 'lucide:package',
-    description: '企业级 Vue 3 组件库，包含 30+ 常用组件，支持按需加载与主题定制。',
-    tags: ['Vue 3', 'TypeScript', 'Vite', 'Storybook'],
-    link: '#',
+    name: '华宇物流加盟管理系统',
+    role: '后端开发 · 2023',
+    icon: 'lucide:truck',
+    description: '优化和自动化公司特许加盟门店的管理流程，通过集中化系统实现门店运营数据的统一管理、分析和决策支持。',
+    tags: ['Spring Boot', 'MyBatis', 'Vue 2', 'MySQL'],
+    highlights: [
+      '复杂费用计算与财务处理业务逻辑',
+      '运单打印、二维码生成打印与扫描',
+      '通用数据字典和选择器组件开发',
+    ],
+  },
+  {
+    name: '平原政务服务平台',
+    role: '后端开发 · 2021',
+    icon: 'lucide:building',
+    description: '政务信息发布平台，涵盖水务动态、投诉建议、新闻管理、重点工程、办事指南、公告管理等模块，支持多级审批与公开发布。',
+    tags: ['Spring Boot', 'MyBatis', 'Oracle', 'Vue 2'],
+    highlights: [
+      '水务动态/新闻/重点工程/办事指南全流程审批发布',
+      '投诉建议公众提交与管理员处理反馈闭环',
+      '公共数据字典组件，提升系统可维护性',
+    ],
+  },
+  {
+    name: 'YueToniaBatteryDetector',
+    role: '独立开发 · 2025',
+    icon: 'lucide:battery-charging',
+    description: '基于 Tauri（Rust + 前端）开发的 Windows 桌面电池检测工具，追求赛博朋克风格 UI 效果。',
+    tags: ['Tauri', 'Rust', 'Vue 3', 'TypeScript'],
+    highlights: [
+      'Rust 后端 + Web 前端桌面应用架构',
+      '赛博朋克风格 UI 设计与实现',
+      '电池检测功能核心逻辑开发',
+    ],
   },
 ]
 </script>

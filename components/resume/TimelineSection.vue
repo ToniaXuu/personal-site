@@ -22,9 +22,12 @@
               <p class="text-sm text-purple-400 mb-3">
                 {{ item.company }}
               </p>
-              <p class="text-[#94a3b8] text-sm leading-relaxed">
-                {{ item.description }}
-              </p>
+              <ul class="text-[#94a3b8] text-sm leading-relaxed space-y-1.5">
+                <li v-for="(desc, j) in item.descriptions" :key="j" class="flex gap-2">
+                  <span class="text-cyan-400/50 mt-1 shrink-0">&#8226;</span>
+                  <span>{{ desc }}</span>
+                </li>
+              </ul>
               <div v-if="item.tags" class="flex flex-wrap gap-2 mt-4">
                 <span
                   v-for="tag in item.tags"
@@ -45,25 +48,51 @@
 <script setup>
 const experiences = [
   {
-    period: '2023 - 至今',
-    title: '高级前端开发工程师',
-    company: 'XX 科技有限公司',
-    description: '负责核心产品前端架构设计，主导从 Vue 2 到 Vue 3 的技术迁移。搭建组件库与 CI/CD 流程，提升团队开发效率 40%。',
-    tags: ['Vue 3', 'TypeScript', 'Nuxt', 'Vite'],
+    period: '2025.03 - 至今',
+    title: '全栈工程师',
+    company: '深圳市天上昀科技有限公司',
+    descriptions: [
+      '基于业务模型进行数据库设计，完成表结构定义、字段设计、索引优化及数据关系建模',
+      '设计并实现后端 RESTful API 接口，包括参数校验、业务逻辑处理、异常处理及接口文档编写',
+      '完成前端页面开发与交互实现，确保与后端接口的高效联调与数据正确展示',
+      '对核心业务流程进行优化与重构，提高系统性能、可维护性及扩展能力',
+    ],
+    tags: ['Vue 3', 'Spring Boot', 'MySQL', 'RESTful API'],
   },
   {
-    period: '2021 - 2023',
-    title: '前端开发工程师',
-    company: 'YY 互联网公司',
-    description: '参与多个 B 端与 C 端产品的开发，独立负责支付模块前端重构，优化首屏加载速度 60%。',
-    tags: ['React', 'Next.js', 'Tailwind CSS', 'Node.js'],
+    period: '2025.04 - 至今（驻场项目）',
+    title: '全栈开发',
+    company: '国投碳管理系统 · 国投检测数智科技（山东）有限公司',
+    descriptions: [
+      '负责碳排放管理系统的全栈开发，基于 Spring Cloud + Vue 3 技术架构',
+      '开发碳排放核算、数据填报审核、考核评价、可视化大屏等核心模块',
+      '基于 ECharts 实现多维度碳排放数据可视化，支持实时刷新与动态展示',
+      '利用 Quartz 实现周期性数据校验、考核执行及月报催报等自动化任务',
+    ],
+    tags: ['Spring Cloud', 'Vue 3', 'ECharts', 'KingBaseES', 'Redis'],
   },
   {
-    period: '2019 - 2021',
-    title: '初级前端开发',
-    company: 'ZZ 科技',
-    description: '参与公司官网与后台管理系统的开发，学习并实践敏捷开发流程与代码规范。',
-    tags: ['Vue 2', 'Element UI', 'jQuery', 'SCSS'],
+    period: '2023.07 - 2025.02',
+    title: '全栈工程师',
+    company: '山东苇航科技有限公司',
+    descriptions: [
+      '负责使用 Java + Spring Boot 框架开发稳定高效的后端服务及 API 接口',
+      '设计合理的数据库结构，开发和维护业务逻辑层，确保功能模块的准确性和稳定性',
+      '负责党建红岩青松平台全栈开发，实现精准帮扶、志愿服务、队伍建设等核心模块',
+      '开发智管采购与生产一体化系统，覆盖采购管理、仓库管理、物资管理等业务模块',
+    ],
+    tags: ['Spring Boot', 'MyBatis', 'Vue 3', 'Element Plus', 'ECharts'],
+  },
+  {
+    period: '2021.06 - 2022.02',
+    title: 'Java 开发工程师',
+    company: '赛博软件有限公司',
+    descriptions: [
+      '使用 Java + Spring Boot 开发和维护服务器端应用程序',
+      '配置 MySQL 数据库，设计高效的数据库架构，确保数据一致性和查询性能',
+      '开发平原政务服务平台，实现水务动态管理、投诉建议管理、新闻管理等功能模块',
+    ],
+    tags: ['Java', 'Spring Boot', 'MyBatis', 'Vue 2', 'Oracle'],
   },
 ]
 </script>
