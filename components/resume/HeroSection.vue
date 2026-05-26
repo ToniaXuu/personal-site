@@ -1,7 +1,7 @@
 <template>
   <section class="min-h-[90vh] flex items-center justify-center relative pt-16 overflow-hidden">
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none hero-glow" />
-    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl pointer-events-none hero-glow-delay" />
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500/5 rounded-full blur-3xl pointer-events-none hero-glow" />
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-violet-500/5 rounded-full blur-3xl pointer-events-none hero-glow-delay" />
 
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
       <!-- Status badge -->
@@ -12,6 +12,13 @@
           <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
         </span>
         开放工作机会 · Open to Work
+      </div>
+
+      <!-- Avatar -->
+      <div class="mb-6 flex justify-center">
+        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-white/10 shadow-lg shadow-green-500/10">
+          <img src="/avatar.jpg" alt="ToniaXuu" class="w-full h-full object-cover" />
+        </div>
       </div>
 
       <!-- Title -->
@@ -35,7 +42,7 @@
       <div class="flex flex-wrap justify-center gap-4">
         <a
           href="#projects"
-          class="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-sm hover:from-cyan-400 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:scale-105"
+          class="px-6 py-3 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-medium text-sm hover:from-green-400 hover:to-emerald-500 transition-all shadow-lg shadow-green-500/20 hover:shadow-green-500/30 hover:scale-105"
         >
           <Icon name="lucide:rocket" size="16" class="inline mr-1.5 -mt-0.5" />
           查看项目
@@ -55,15 +62,15 @@
       <!-- Quick stats -->
       <div class="mt-16 flex flex-wrap justify-center gap-8 text-sm" style="color: var(--color-text-subtle)">
         <div class="flex items-center gap-2">
-          <Icon name="lucide:calendar" size="16" class="text-cyan-400/60" />
+          <Icon name="lucide:calendar" size="16" class="text-green-400/60" />
           <span><span class="font-semibold" style="color: var(--color-text)">5</span> 年经验</span>
         </div>
         <div class="flex items-center gap-2">
-          <Icon name="lucide:code-2" size="16" class="text-purple-400/60" />
+          <Icon name="lucide:code-2" size="16" class="text-violet-400/60" />
           <span><span class="font-semibold" style="color: var(--color-text)">6+</span> 个核心项目</span>
         </div>
         <div class="flex items-center gap-2">
-          <Icon name="lucide:layers" size="16" class="text-emerald-400/60" />
+          <Icon name="lucide:layers" size="16" class="text-green-400/60" />
           <span>全栈开发</span>
         </div>
       </div>

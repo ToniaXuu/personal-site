@@ -3,7 +3,6 @@ const experiences = [
   {
     period: '2025.03 - 至今',
     title: '全栈工程师',
-    company: '某科技有限公司',
     descriptions: [
       '基于业务模型进行数据库设计，完成表结构定义、字段设计、索引优化及数据关系建模',
       '设计并实现后端 RESTful API 接口，包括参数校验、业务逻辑处理、异常处理及接口文档编写',
@@ -15,7 +14,6 @@ const experiences = [
   {
     period: '2025.04 - 至今（驻场项目）',
     title: '全栈开发',
-    company: '碳排放管理系统 · 某数智科技公司',
     descriptions: [
       '负责碳排放管理系统的全栈开发，基于 Spring Cloud + Vue 3 技术架构',
       '开发碳排放核算、数据填报审核、考核评价、可视化大屏等核心模块',
@@ -27,7 +25,6 @@ const experiences = [
   {
     period: '2023.07 - 2025.02',
     title: '全栈工程师',
-    company: '某科技有限公司',
     descriptions: [
       '负责使用 Java + Spring Boot 框架开发稳定高效的后端服务及 API 接口',
       '设计合理的数据库结构，开发和维护业务逻辑层，确保功能模块的准确性和稳定性',
@@ -39,7 +36,6 @@ const experiences = [
   {
     period: '2021.06 - 2022.02',
     title: 'Java 开发工程师',
-    company: '某软件有限公司',
     descriptions: [
       '使用 Java + Spring Boot 开发和维护服务器端应用程序',
       '配置 MySQL 数据库，设计高效的数据库架构，确保数据一致性和查询性能',
@@ -66,18 +62,15 @@ const experiences = [
             <UiGlassCard class="relative">
               <div class="timeline-line">
                 <div class="timeline-dot" />
-                <span class="text-xs font-medium text-cyan-400 mb-2 block">
+                <span class="text-xs font-medium text-green-400 mb-2 block">
                   {{ item.period }}
                 </span>
-                <h3 class="text-xl font-semibold mb-1" style="color: var(--color-text)">
+                <h3 class="text-xl font-semibold mb-3" style="color: var(--color-text)">
                   {{ item.title }}
                 </h3>
-                <p class="text-sm text-purple-400 mb-3">
-                  {{ item.company }}
-                </p>
                 <ul class="text-sm leading-relaxed space-y-1.5" style="color: var(--color-text-muted)">
                   <li v-for="(desc, j) in item.descriptions" :key="j" class="flex gap-2">
-                    <span class="text-cyan-400/50 mt-1 shrink-0">&#8226;</span>
+                    <span class="text-green-400/50 mt-1 shrink-0">&#8226;</span>
                     <span>{{ desc }}</span>
                   </li>
                 </ul>
@@ -86,7 +79,7 @@ const experiences = [
                     {{ tag }}
                   </span>
                 </div>
-                <div class="mt-4 flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-cyan)">
+                <div class="mt-4 flex items-center gap-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-green)">
                   <span>查看详情</span>
                   <Icon name="lucide:arrow-right" size="14" />
                 </div>

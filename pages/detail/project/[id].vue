@@ -10,13 +10,23 @@
       <!-- Header -->
       <header class="mb-10">
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center">
-            <Icon :name="item.icon" size="24" class="text-cyan-400" />
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400/20 to-violet-500/20 flex items-center justify-center">
+            <Icon :name="item.icon" size="24" class="text-green-400" />
           </div>
           <div>
-            <h1 class="text-2xl sm:text-3xl font-bold" style="color: var(--color-text)">
-              {{ item.name }}
-            </h1>
+            <div class="flex items-center gap-2">
+              <h1 class="text-2xl sm:text-3xl font-bold" style="color: var(--color-text)">
+                {{ item.name }}
+              </h1>
+              <span
+                v-if="item.type === 'personal'"
+                class="text-xs px-2 py-0.5 rounded-full bg-violet-400/10 text-violet-400 border border-violet-400/20"
+              >个人项目</span>
+              <span
+                v-else
+                class="text-xs px-2 py-0.5 rounded-full bg-green-400/10 text-green-400 border border-green-400/20"
+              >工作项目</span>
+            </div>
             <span class="text-sm" style="color: var(--color-text-subtle)">{{ item.role }}</span>
           </div>
         </div>
@@ -48,8 +58,8 @@
               :key="j"
               class="flex items-start gap-3"
             >
-              <div class="w-6 h-6 rounded-full bg-emerald-400/10 flex items-center justify-center shrink-0 mt-0.5">
-                <Icon name="lucide:check" size="14" class="text-emerald-400" />
+              <div class="w-6 h-6 rounded-full bg-green-400/10 flex items-center justify-center shrink-0 mt-0.5">
+                <Icon name="lucide:check" size="14" class="text-green-400" />
               </div>
               <span style="color: var(--color-text-muted)">{{ h }}</span>
             </li>
@@ -102,6 +112,7 @@ const projects = [
   {
     name: '碳排放管理系统',
     role: '全栈开发 · 2025',
+    type: 'work',
     icon: 'lucide:leaf',
     description: '面向企业碳排放全过程管理的统一能碳平台，围绕数据采集、排放核算、指标管理、报告填报及考核评价等核心业务，实现碳数据的标准化、流程化与可视化。',
     tags: ['Spring Cloud', 'Vue 3', 'Element Plus', 'ECharts', 'KingBaseES', 'Redis'],
@@ -114,6 +125,7 @@ const projects = [
   {
     name: '数字化综合管理平台',
     role: '全栈开发 · 2024',
+    type: 'work',
     icon: 'lucide:landmark',
     description: '全流程数字化综合管理平台，实现从信息录入、多级审批到数据展示的闭环管理。',
     tags: ['Spring Cloud', 'Vue 3', 'Element Plus', 'MySQL', 'PowerJob'],
@@ -126,6 +138,7 @@ const projects = [
   {
     name: '采购与生产一体化系统',
     role: '全栈开发 · 2024',
+    type: 'work',
     icon: 'lucide:factory',
     description: '实现客户和供应商的一体化管理，涵盖销售、采购、生产、库存等多个模块，跟踪生产流程，管理货运物流的配送与成本管控。',
     tags: ['Spring Boot', 'Vue 3', 'Element Plus', 'MySQL', 'Quartz'],
@@ -138,6 +151,7 @@ const projects = [
   {
     name: '物流加盟管理系统',
     role: '后端开发 · 2023',
+    type: 'work',
     icon: 'lucide:truck',
     description: '优化和自动化公司特许加盟门店的管理流程，通过集中化系统实现门店运营数据的统一管理、分析和决策支持。',
     tags: ['Spring Boot', 'MyBatis', 'Vue 2', 'MySQL'],
@@ -150,6 +164,7 @@ const projects = [
   {
     name: '政务信息服务平台',
     role: '后端开发 · 2021',
+    type: 'work',
     icon: 'lucide:building',
     description: '政务信息发布平台，涵盖动态管理、投诉建议、新闻管理、重点工程、办事指南、公告管理等模块，支持多级审批与公开发布。',
     tags: ['Spring Boot', 'MyBatis', 'Oracle', 'Vue 2'],
@@ -162,6 +177,7 @@ const projects = [
   {
     name: 'BatteryDetector',
     role: '独立开发 · 2025',
+    type: 'personal',
     icon: 'lucide:battery-charging',
     description: '基于 Tauri（Rust + 前端）开发的 Windows 桌面电池检测工具，追求赛博朋克风格 UI 效果。',
     tags: ['Tauri', 'Rust', 'Vue 3', 'TypeScript'],

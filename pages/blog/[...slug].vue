@@ -12,7 +12,7 @@
       <!-- 内容 -->
       <template v-else-if="page">
         <!-- Back -->
-        <NuxtLink to="/blog" class="inline-flex items-center gap-1.5 text-sm mb-8 transition-colors hover:text-cyan-400" style="color: var(--color-text-muted)">
+        <NuxtLink to="/blog" class="inline-flex items-center gap-1.5 text-sm mb-8 transition-colors hover:text-green-400" style="color: var(--color-text-muted)">
           <Icon name="lucide:arrow-left" size="16" />
           返回博客列表
         </NuxtLink>
@@ -30,7 +30,7 @@
               <span
                 v-for="tag in page.tags"
                 :key="tag"
-                class="text-xs px-2 py-0.5 rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20"
+                class="text-xs px-2 py-0.5 rounded-full bg-green-400/10 text-green-400 border border-green-400/20"
               >
                 {{ tag }}
               </span>
@@ -45,7 +45,7 @@
 
         <!-- Divider -->
         <div class="mt-16 pt-8 text-center" style="border-top: 1px solid var(--color-border)">
-          <NuxtLink to="/blog" class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+          <NuxtLink to="/blog" class="text-sm text-green-400 hover:text-green-300 transition-colors">
             查看全部文章
           </NuxtLink>
         </div>
@@ -55,7 +55,7 @@
       <div v-else class="text-center py-20">
         <Icon name="lucide:file-x" size="48" class="mx-auto mb-4 opacity-30" style="color: var(--color-text-muted)" />
         <p class="text-lg mb-2" style="color: var(--color-text)">文章未找到</p>
-        <NuxtLink to="/blog" class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors">
+        <NuxtLink to="/blog" class="text-sm text-green-400 hover:text-green-300 transition-colors">
           返回博客列表
         </NuxtLink>
       </div>

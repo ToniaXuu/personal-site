@@ -6,7 +6,7 @@
     <p v-if="subtitle" class="text-lg" style="color: var(--color-text-muted)">
       {{ subtitle }}
     </p>
-    <div class="mt-4 h-px w-16 bg-gradient-to-r from-cyan-400 to-purple-500" />
+    <div class="mt-4 h-px w-16 bg-gradient-to-r from-green-400 to-violet-500" />
   </div>
 </template>
 

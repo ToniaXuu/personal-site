@@ -10,12 +10,11 @@
       <!-- Header -->
       <header class="mb-10">
         <div class="mb-4">
-          <span class="text-sm font-medium text-cyan-400">{{ item.period }}</span>
+          <span class="text-sm font-medium text-green-400">{{ item.period }}</span>
         </div>
-        <h1 class="text-2xl sm:text-3xl font-bold mb-2" style="color: var(--color-text)">
+        <h1 class="text-2xl sm:text-3xl font-bold" style="color: var(--color-text)">
           {{ item.title }}
         </h1>
-        <p class="text-lg text-purple-400">{{ item.company }}</p>
 
         <!-- Tags -->
         <div class="flex flex-wrap gap-2 mt-4">
@@ -35,8 +34,8 @@
               :key="j"
               class="flex items-start gap-3"
             >
-              <div class="w-6 h-6 rounded-full bg-cyan-400/10 flex items-center justify-center shrink-0 mt-0.5">
-                <span class="text-cyan-400 text-xs font-bold">{{ j + 1 }}</span>
+              <div class="w-6 h-6 rounded-full bg-green-400/10 flex items-center justify-center shrink-0 mt-0.5">
+                <span class="text-green-400 text-xs font-bold">{{ j + 1 }}</span>
               </div>
               <span class="leading-relaxed" style="color: var(--color-text-muted)">{{ desc }}</span>
             </li>
@@ -88,7 +87,6 @@ const experiences = [
   {
     period: '2025.03 - 至今',
     title: '全栈工程师',
-    company: '某科技有限公司',
     descriptions: [
       '基于业务模型进行数据库设计，完成表结构定义、字段设计、索引优化及数据关系建模',
       '设计并实现后端 RESTful API 接口，包括参数校验、业务逻辑处理、异常处理及接口文档编写',
@@ -100,7 +98,6 @@ const experiences = [
   {
     period: '2025.04 - 至今（驻场项目）',
     title: '全栈开发',
-    company: '碳排放管理系统 · 某数智科技公司',
     descriptions: [
       '负责碳排放管理系统的全栈开发，基于 Spring Cloud + Vue 3 技术架构',
       '开发碳排放核算、数据填报审核、考核评价、可视化大屏等核心模块',
@@ -112,7 +109,6 @@ const experiences = [
   {
     period: '2023.07 - 2025.02',
     title: '全栈工程师',
-    company: '某科技有限公司',
     descriptions: [
       '负责使用 Java + Spring Boot 框架开发稳定高效的后端服务及 API 接口',
       '设计合理的数据库结构，开发和维护业务逻辑层，确保功能模块的准确性和稳定性',
@@ -124,7 +120,6 @@ const experiences = [
   {
     period: '2021.06 - 2022.02',
     title: 'Java 开发工程师',
-    company: '某软件有限公司',
     descriptions: [
       '使用 Java + Spring Boot 开发和维护服务器端应用程序',
       '配置 MySQL 数据库，设计高效的数据库架构，确保数据一致性和查询性能',

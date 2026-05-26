@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLoadingIndicator color="#06b6d4" :height="2" :duration="3000" :throttle="0" />
+    <NuxtLoadingIndicator color="#22c55e" :height="2" :duration="3000" :throttle="0" />
     <NuxtLayout>
       <NuxtPage :transition="{ name: 'page-fade', mode: 'out-in' }" />
     </NuxtLayout>

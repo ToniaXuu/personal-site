@@ -25,7 +25,7 @@
         >
           <Icon :name="opt.icon" size="16" />
           <span>{{ opt.label }}</span>
-          <Icon v-if="mode === opt.value" name="lucide:check" size="14" class="ml-auto text-cyan-500" />
+          <Icon v-if="mode === opt.value" name="lucide:check" size="14" class="ml-auto text-green-500" />
         </button>
 
         <!-- 自定义时间设置 -->
@@ -165,7 +165,7 @@ function onDarkStartChange(e) {
   cursor: pointer;
 }
 .theme-input:focus {
-  border-color: var(--accent-cyan);
+  border-color: var(--color-accent-green);
 }
 
 /* Transitions */

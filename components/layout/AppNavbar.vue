@@ -6,19 +6,19 @@
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <!-- Logo -->
       <NuxtLink to="/" class="text-lg font-bold gradient-text flex items-center gap-2">
-        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold">T</span>
+        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-green-400 to-violet-500 flex items-center justify-center text-white text-xs font-bold">T</span>
         ToniaXuu
       </NuxtLink>
 
       <!-- Links -->
-      <div class="hidden sm:flex items-center gap-8 text-sm">
-        <NuxtLink to="/" class="nav-link">首页</NuxtLink>
-        <NuxtLink to="/#about" class="nav-link">关于</NuxtLink>
-        <NuxtLink to="/#experience" class="nav-link">经历</NuxtLink>
-        <NuxtLink to="/#skills" class="nav-link">技能</NuxtLink>
-        <NuxtLink to="/#projects" class="nav-link">项目</NuxtLink>
-        <NuxtLink to="/#news" class="nav-link">动态</NuxtLink>
-        <NuxtLink to="/blog" class="nav-link">博客</NuxtLink>
+      <div class="hidden sm:flex items-center gap-1 text-sm">
+        <NuxtLink to="/" class="nav-link px-3 py-1.5 rounded-lg">首页</NuxtLink>
+        <NuxtLink to="/#about" class="nav-link px-3 py-1.5 rounded-lg">关于</NuxtLink>
+        <NuxtLink to="/#experience" class="nav-link px-3 py-1.5 rounded-lg">经历</NuxtLink>
+        <NuxtLink to="/#skills" class="nav-link px-3 py-1.5 rounded-lg">技能</NuxtLink>
+        <NuxtLink to="/#projects" class="nav-link px-3 py-1.5 rounded-lg">项目</NuxtLink>
+        <NuxtLink to="/#news" class="nav-link px-3 py-1.5 rounded-lg">动态</NuxtLink>
+        <NuxtLink to="/blog" class="nav-link px-3 py-1.5 rounded-lg">博客</NuxtLink>
       </div>
 
       <!-- Right side -->

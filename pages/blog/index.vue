@@ -34,13 +34,13 @@
                 <span
                   v-for="tag in post.tags"
                   :key="tag"
-                  class="text-xs px-2 py-0.5 rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20"
+                  class="text-xs px-2 py-0.5 rounded-full bg-green-400/10 text-green-400 border border-green-400/20"
                 >
                   {{ tag }}
                 </span>
               </div>
               <!-- Title -->
-              <h3 class="text-lg font-semibold mb-2 group-hover:text-cyan-400 transition-colors" style="color: var(--color-text)">
+              <h3 class="text-lg font-semibold mb-2 group-hover:text-green-400 transition-colors" style="color: var(--color-text)">
                 {{ post.title }}
               </h3>
               <!-- Description -->
@@ -52,7 +52,7 @@
                 <time class="text-xs" style="color: var(--color-text-subtle)">
                   {{ formatDate(post.date) }}
                 </time>
-                <Icon name="lucide:arrow-right" size="14" class="opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-cyan)" />
+                <Icon name="lucide:arrow-right" size="14" class="opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-green)" />
               </div>
             </UiGlassCard>
           </NuxtLink>

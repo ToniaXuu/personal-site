@@ -10,10 +10,10 @@
           <NuxtLink v-if="item.link" :to="item.link" class="block group">
             <UiGlassCard class="h-full flex flex-col">
               <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-medium text-cyan-400/80">{{ item.date }}</span>
+                <span class="text-xs font-medium text-green-400/80">{{ item.date }}</span>
                 <span class="text-xs px-2 py-0.5 rounded-full border" :class="item.typeClass">{{ item.type }}</span>
               </div>
-              <h3 class="text-base font-semibold mb-2 group-hover:text-cyan-400 transition-colors" style="color: var(--color-text)">
+              <h3 class="text-base font-semibold mb-2 group-hover:text-green-400 transition-colors" style="color: var(--color-text)">
                 {{ item.title }}
               </h3>
               <p class="text-sm leading-relaxed flex-1 mb-4" style="color: var(--color-text-muted)">
@@ -21,16 +21,16 @@
               </p>
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2 text-xs" style="color: var(--color-text-subtle)">
-                  <Icon :name="item.icon" size="14" class="text-cyan-400/50" />
+                  <Icon :name="item.icon" size="14" class="text-green-400/50" />
                   <span>{{ item.source }}</span>
                 </div>
-                <Icon name="lucide:arrow-right" size="14" class="opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-cyan)" />
+                <Icon name="lucide:arrow-right" size="14" class="opacity-0 group-hover:opacity-100 transition-opacity" style="color: var(--color-accent-green)" />
               </div>
             </UiGlassCard>
           </NuxtLink>
           <UiGlassCard v-else class="h-full flex flex-col">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-medium text-cyan-400/80">{{ item.date }}</span>
+              <span class="text-xs font-medium text-green-400/80">{{ item.date }}</span>
               <span class="text-xs px-2 py-0.5 rounded-full border" :class="item.typeClass">{{ item.type }}</span>
             </div>
             <h3 class="text-base font-semibold mb-2" style="color: var(--color-text)">
@@ -40,7 +40,7 @@
               {{ item.summary }}
             </p>
             <div class="flex items-center gap-2 text-xs" style="color: var(--color-text-subtle)">
-              <Icon :name="item.icon" size="14" class="text-cyan-400/50" />
+              <Icon :name="item.icon" size="14" class="text-green-400/50" />
               <span>{{ item.source }}</span>
             </div>
           </UiGlassCard>
@@ -66,7 +66,7 @@ const news = [
     title: 'Nuxt 4 + Vercel 部署个人站点上线',
     summary: '基于 Nuxt 4 构建的个人站点正式上线，支持 SSG 静态生成，托管于 Vercel 平台。包含简历展示、博客系统和动态粒子背景。',
     type: '项目',
-    typeClass: 'border-cyan-400/30 text-cyan-400 bg-cyan-400/5',
+    typeClass: 'border-green-400/30 text-green-400 bg-green-400/5',
     icon: 'lucide:rocket',
     source: 'ToniaXuu',
   },
@@ -75,7 +75,7 @@ const news = [
     title: '开源桌面应用 YueToniaBatteryDetector 开发中',
     summary: '基于 Tauri（Rust + Vue 3）的 Windows 电池检测工具正在开发，赛博朋克风格 UI，支持实时电池状态监控与健康度分析。',
     type: '开发中',
-    typeClass: 'border-purple-400/30 text-purple-400 bg-purple-400/5',
+    typeClass: 'border-violet-400/30 text-violet-400 bg-violet-400/5',
     icon: 'lucide:battery-charging',
     source: 'GitHub',
   },
@@ -103,7 +103,7 @@ const news = [
     title: '数据库迁移：MySQL 到 KingBaseES',
     summary: '顺利完成碳排放管理系统从 MySQL 到国产数据库 KingBaseES 的迁移工作，涉及 151 张表的适配、SQL 语法兼容与性能调优。',
     type: '技术',
-    typeClass: 'border-cyan-400/30 text-cyan-400 bg-cyan-400/5',
+    typeClass: 'border-green-400/30 text-green-400 bg-green-400/5',
     icon: 'lucide:database',
     source: '项目',
   },

@@ -4,12 +4,12 @@
       <span
         v-for="tag in post.tags"
         :key="tag"
-        class="text-xs px-2 py-0.5 rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20"
+        class="text-xs px-2 py-0.5 rounded-full bg-green-400/10 text-green-400 border border-green-400/20"
       >
         {{ tag }}
       </span>
     </div>
-    <h3 class="text-lg font-semibold text-[#f1f5f9] mb-2 group-hover:text-cyan-400 transition-colors">
+    <h3 class="text-lg font-semibold text-[#f1f5f9] mb-2 group-hover:text-green-400 transition-colors">
       {{ post.title }}
     </h3>
     <p class="text-[#94a3b8] text-sm leading-relaxed mb-4 flex-1 line-clamp-2">

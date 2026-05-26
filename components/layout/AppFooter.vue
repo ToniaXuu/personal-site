@@ -3,7 +3,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
-          <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-white text-sm font-bold">T</span>
+          <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-violet-500 flex items-center justify-center text-white text-sm font-bold">T</span>
           <div>
             <p class="text-sm font-semibold" style="color: var(--color-text)">ToniaXuu</p>
             <p class="text-xs" style="color: var(--color-text-muted)">Full Stack Developer · 5 Years</p>
@@ -26,9 +26,9 @@
       <div class="mt-6 pt-6 text-center" style="border-top: 1px solid var(--divider-color)">
         <p class="text-xs" style="color: var(--color-text-subtle)">
           &copy; {{ year }} ToniaXuu. Built with
-          <a href="https://nuxt.com" target="_blank" class="transition-colors" style="color: var(--color-text-muted)" @mouseenter="$event.target.style.color = 'var(--color-accent-cyan)'" @mouseleave="$event.target.style.color = 'var(--color-text-muted)'">Nuxt</a>
+          <a href="https://nuxt.com" target="_blank" class="transition-colors" style="color: var(--color-text-muted)" @mouseenter="$event.target.style.color = 'var(--color-accent-green)'" @mouseleave="$event.target.style.color = 'var(--color-text-muted)'">Nuxt</a>
           &middot; Deployed on
-          <a href="https://vercel.com" target="_blank" class="transition-colors" style="color: var(--color-text-muted)" @mouseenter="$event.target.style.color = 'var(--color-accent-cyan)'" @mouseleave="$event.target.style.color = 'var(--color-text-muted)'">Vercel</a>
+          <a href="https://vercel.com" target="_blank" class="transition-colors" style="color: var(--color-text-muted)" @mouseenter="$event.target.style.color = 'var(--color-accent-green)'" @mouseleave="$event.target.style.color = 'var(--color-text-muted)'">Vercel</a>
         </p>
       </div>
     </div>

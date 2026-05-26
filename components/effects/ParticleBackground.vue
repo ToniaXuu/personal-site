@@ -13,7 +13,7 @@ function handleResize() { resize() }
 
 const PARTICLE_COUNT = 80
 const MAX_DIST = 140
-const COLORS = ['#06b6d4', '#a855f7', '#10b981']
+const COLORS = ['#4ade80', '#a78bfa', '#34d399']
 
 class Particle {
   constructor() { this.reset() }

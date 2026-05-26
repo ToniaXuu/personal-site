@@ -12,7 +12,7 @@
         >
           <UiGlassCard>
             <h3 class="text-lg font-semibold mb-4 flex items-center gap-2" style="color: var(--color-text)">
-              <Icon :name="group.icon" size="20" class="text-cyan-400" />
+              <Icon :name="group.icon" size="20" class="text-green-400" />
               {{ group.name }}
             </h3>
             <div class="flex flex-wrap gap-2">
