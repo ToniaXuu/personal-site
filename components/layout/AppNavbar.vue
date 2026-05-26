@@ -6,13 +6,15 @@
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <!-- Logo -->
       <NuxtLink to="/" class="text-lg font-bold gradient-text flex items-center gap-2">
-        <span class="w-7 h-7 rounded-lg bg-gradient-to-br from-green-400 to-violet-500 flex items-center justify-center text-white text-xs font-bold">T</span>
+        <div class="w-7 h-7 rounded-lg overflow-hidden shrink-0">
+          <img src="/avatar.jpg" alt="ToniaXuu" class="w-full h-full object-cover" />
+        </div>
         ToniaXuu
       </NuxtLink>
 
       <!-- Links -->
       <div class="hidden sm:flex items-center gap-1 text-sm">
-        <NuxtLink to="/" class="nav-link px-3 py-1.5 rounded-lg">首页</NuxtLink>
+        <NuxtLink to="/" class="nav-link px-3 py-1.5 rounded-lg" exact-active-class="">首页</NuxtLink>
         <NuxtLink to="/#about" class="nav-link px-3 py-1.5 rounded-lg">关于</NuxtLink>
         <NuxtLink to="/#experience" class="nav-link px-3 py-1.5 rounded-lg">经历</NuxtLink>
         <NuxtLink to="/#skills" class="nav-link px-3 py-1.5 rounded-lg">技能</NuxtLink>
@@ -51,7 +53,7 @@
         v-if="mobileOpen"
         class="sm:hidden navbar-scrolled px-6 py-4 flex flex-col gap-4"
       >
-        <NuxtLink to="/" class="nav-link text-sm" @click="mobileOpen = false">首页</NuxtLink>
+        <NuxtLink to="/" class="nav-link text-sm" exact-active-class="" @click="mobileOpen = false">首页</NuxtLink>
         <NuxtLink to="/#about" class="nav-link text-sm" @click="mobileOpen = false">关于</NuxtLink>
         <NuxtLink to="/#experience" class="nav-link text-sm" @click="mobileOpen = false">经历</NuxtLink>
         <NuxtLink to="/#skills" class="nav-link text-sm" @click="mobileOpen = false">技能</NuxtLink>
