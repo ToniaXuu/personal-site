@@ -16,6 +16,12 @@ export default defineNuxtConfig({
         { property: 'og:description', content: '5 years full stack development experience, focused on Vue/Java/Microservices architecture' },
         { property: 'og:type', content: 'website' },
       ],
+      script: [
+        {
+          // 防闪烁脚本：在 DOM 渲染前读取 localStorage 应用正确主题
+          innerHTML: `(function(){try{var m=localStorage.getItem('theme-mode');var d=true;if(m==='light')d=false;else if(m==='system'||!m){d=window.matchMedia('(prefers-color-scheme:dark)').matches}else if(m==='custom'){try{var c=JSON.parse(localStorage.getItem('theme-custom-time'));if(c){var n=new Date(),h=n.getHours(),min=n.getMinutes(),cm=h*60+min;var ls=c.lightStart.split(':').map(Number),ds=c.darkStart.split(':').map(Number),lm2=ls[0]*60+ls[1],dm2=ds[0]*60+ds[1];if(lm2<dm2)d=cm<lm2||cm>=dm2;else d=cm>=dm2&&cm<lm2}}catch(e){}}if(d)document.documentElement.classList.add('dark');}catch(e){}})()`,
+        },
+      ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

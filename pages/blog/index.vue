@@ -5,10 +5,27 @@
         <UiSectionTitle title="博客" subtitle="Blog" />
       </UiAnimatedSection>
 
-      <div v-if="posts?.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 加载骨架屏 -->
+      <div v-if="pending" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          v-for="i in 3"
+          :key="i"
+          class="glass-card p-6 animate-pulse"
+        >
+          <div class="h-3 w-16 rounded mb-3" style="background: var(--color-border)" />
+          <div class="h-5 w-3/4 rounded mb-2" style="background: var(--color-border)" />
+          <div class="h-4 w-full rounded mb-1" style="background: var(--color-border)" />
+          <div class="h-4 w-2/3 rounded mb-6" style="background: var(--color-border)" />
+          <div class="h-3 w-24 rounded" style="background: var(--color-border)" />
+        </div>
+      </div>
+
+      <!-- 文章列表 -->
+      <div v-else-if="posts?.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <UiAnimatedSection
-          v-for="post in posts"
+          v-for="(post, idx) in posts"
           :key="post._path"
+          :style="{ animationDelay: `${idx * 80}ms` }"
         >
           <NuxtLink :to="post._path" class="block group">
             <UiGlassCard class="h-full flex flex-col">
@@ -42,6 +59,7 @@
         </UiAnimatedSection>
       </div>
 
+      <!-- 空状态 -->
       <div v-else class="text-center py-20" style="color: var(--color-text-muted)">
         <Icon name="lucide:file-text" size="48" class="mx-auto mb-4 opacity-30" />
         <p>暂无文章</p>
@@ -51,10 +69,11 @@
 </template>
 
 <script setup>
-const { data: posts } = await useAsyncData('blog-posts', () =>
+const { data: posts, pending } = await useAsyncData('blog-posts', () =>
   queryContent('blog')
     .sort({ date: -1 })
-    .find()
+    .find(),
+  { lazy: true }
 )
 
 const formatDate = (d) => {
