@@ -9,26 +9,20 @@
         {{ tag }}
       </span>
     </div>
-    <h3 class="text-lg font-semibold text-[#f1f5f9] mb-2 group-hover:text-green-400 transition-colors">
+    <h3 class="text-lg font-semibold mb-2 group-hover:text-green-400 transition-colors" style="color: var(--color-text)">
       {{ post.title }}
     </h3>
-    <p class="text-[#94a3b8] text-sm leading-relaxed mb-4 flex-1 line-clamp-2">
+    <p class="text-sm leading-relaxed mb-4 flex-1 line-clamp-2" style="color: var(--color-text-muted)">
       {{ post.description }}
     </p>
-    <time class="text-xs text-[#64748b]">
+    <time class="text-xs" style="color: var(--color-text-subtle)">
       {{ formatDate(post.date) }}
     </time>
   </UiGlassCard>
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   post: { type: Object, required: true },
 })
-
-const formatDate = (d) => {
-  if (!d) return ''
-  const date = new Date(d)
-  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
-}
 </script>

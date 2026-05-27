@@ -75,10 +75,4 @@ const { data: posts, pending } = await useAsyncData('blog-posts', () =>
     .find(),
   { lazy: true }
 )
-
-const formatDate = (d) => {
-  if (!d) return ''
-  const date = new Date(d)
-  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
-}
 </script>

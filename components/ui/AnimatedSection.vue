@@ -19,5 +19,9 @@ onMounted(() => {
     { threshold: 0.1 }
   )
   if (el.value) observer.observe(el.value)
+
+  onUnmounted(() => {
+    observer.disconnect()
+  })
 })
 </script>

@@ -28,6 +28,7 @@
         <a
           href="https://github.com/ToniaXuu"
           target="_blank"
+          rel="noopener noreferrer"
           class="hidden sm:flex w-8 h-8 rounded-lg items-center justify-center hover:bg-[var(--glass-hover)] transition-all"
           style="color: var(--color-text-muted)"
           title="GitHub"
@@ -60,7 +61,7 @@
         <NuxtLink to="/#projects" class="mobile-nav-item text-sm" @click="mobileOpen = false">项目</NuxtLink>
         <NuxtLink to="/#news" class="mobile-nav-item text-sm" @click="mobileOpen = false">动态</NuxtLink>
         <NuxtLink to="/blog" class="mobile-nav-item text-sm" @click="mobileOpen = false">博客</NuxtLink>
-        <a href="https://github.com/ToniaXuu" target="_blank" class="mobile-nav-item text-sm flex items-center gap-2">
+        <a href="https://github.com/ToniaXuu" target="_blank" rel="noopener noreferrer" class="mobile-nav-item text-sm flex items-center gap-2">
           <Icon name="lucide:github" size="16" /> GitHub
         </a>
       </div>
@@ -69,13 +70,25 @@
 </template>
 
 <script setup>
+const route = useRoute()
 const scrolled = ref(false)
 const mobileOpen = ref(false)
 
+const onScroll = () => {
+  scrolled.value = window.scrollY > 20
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', () => {
-    scrolled.value = window.scrollY > 20
-  })
+  window.addEventListener('scroll', onScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+})
+
+// 路由变化时自动关闭移动端菜单
+watch(() => route.path, () => {
+  mobileOpen.value = false
 })
 </script>
 

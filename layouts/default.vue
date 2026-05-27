@@ -13,4 +13,22 @@
 
 <script setup>
 import '~/assets/css/main.css'
+
+// JSON-LD structured data for SEO
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'ToniaXuu',
+        url: 'https://toniaxuu.com',
+        jobTitle: 'Full Stack Developer',
+        sameAs: ['https://github.com/ToniaXuu'],
+        knowsAbout: ['Vue.js', 'Java', 'Spring Boot', 'Spring Cloud', 'Full Stack Development'],
+      }),
+    },
+  ],
+})
 </script>

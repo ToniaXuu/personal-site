@@ -20,10 +20,16 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
+const onScroll = () => {
+  visible.value = window.scrollY > 400
+}
+
 onMounted(() => {
-  window.addEventListener('scroll', () => {
-    visible.value = window.scrollY > 400
-  })
+  window.addEventListener('scroll', onScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
 })
 </script>
 

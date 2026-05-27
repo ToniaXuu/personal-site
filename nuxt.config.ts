@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@vueuse/motion/nuxt', '@nuxt/icon'],
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@vueuse/motion/nuxt', '@nuxt/icon', '@nuxtjs/sitemap'],
 
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
 
   app: {
     head: {
@@ -15,6 +15,10 @@ export default defineNuxtConfig({
         { property: 'og:title', content: 'ToniaXuu | Full Stack Developer' },
         { property: 'og:description', content: '5 years full stack development experience, focused on Vue/Java/Microservices architecture' },
         { property: 'og:type', content: 'website' },
+        { property: 'og:image', content: '/avatar.jpg' },
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:title', content: 'ToniaXuu | Full Stack Developer' },
+        { name: 'twitter:description', content: 'Full Stack Developer, focused on Vue/Java/Microservices' },
       ],
       script: [
         {
@@ -29,6 +33,17 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap' },
       ],
     },
+  },
+
+  // Sitemap configuration
+  sitemap: {
+    hostname: 'https://toniaxuu.com',
+  },
+
+  // Robots.txt
+  robots: {
+    allow: '/',
+    sitemap: 'https://toniaxuu.com/sitemap.xml',
   },
 
   tailwindcss: {

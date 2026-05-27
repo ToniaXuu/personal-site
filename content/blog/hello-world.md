@@ -17,7 +17,7 @@ tags: [intro, personal]
 
 这个网站采用以下技术构建：
 
-- **Nuxt 3** - Vue 3 全栈框架，支持 SSG/SSR
+- **Nuxt 4** - Vue 3 全栈框架，支持 SSG/SSR
 - **@nuxt/content** - Markdown 驱动的 CMS
 - **Tailwind CSS** - 原子化 CSS 框架
 - **Vercel** - 部署平台

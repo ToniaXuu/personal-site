@@ -31,7 +31,7 @@
 
       <!-- Subtitle -->
       <p class="text-xl sm:text-2xl max-w-2xl mx-auto mb-4 leading-relaxed" style="color: var(--color-text-muted)">
-        全栈工程师 · 5 年开发经验
+        全栈工程师 · {{ yearsOfExperience }} 年开发经验
       </p>
       <p class="text-base max-w-xl mx-auto mb-10 leading-relaxed" style="color: var(--color-text-subtle)">
         专注 Vue 全栈开发与 Java 微服务架构，热衷构建优雅、高性能的 Web 应用。
@@ -63,7 +63,7 @@
       <div class="mt-16 flex flex-wrap justify-center gap-8 text-sm" style="color: var(--color-text-subtle)">
         <div class="flex items-center gap-2">
           <Icon name="lucide:calendar" size="16" class="text-green-400/60" />
-          <span><span class="font-semibold" style="color: var(--color-text)">5</span> 年经验</span>
+          <span><span class="font-semibold" style="color: var(--color-text)">{{ yearsOfExperience }}</span> 年经验</span>
         </div>
         <div class="flex items-center gap-2">
           <Icon name="lucide:code-2" size="16" class="text-violet-400/60" />
@@ -80,6 +80,10 @@
     <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style="background: var(--hero-fade)" />
   </section>
 </template>
+
+<script setup>
+const yearsOfExperience = getYearsOfExperience()
+</script>
 
 <style scoped>
 .hero-glow {

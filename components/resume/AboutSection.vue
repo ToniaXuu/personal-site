@@ -14,7 +14,7 @@
             </div>
             <div class="flex-1 leading-relaxed space-y-4" style="color: var(--color-text-muted)">
               <p>
-                Full Stack Developer，拥有 <span class="text-green-400 font-medium">5 年</span> Web 开发经验。
+                Full Stack Developer，拥有 <span class="text-green-400 font-medium">{{ yearsOfExperience }} 年</span> Web 开发经验。
                 具备扎实的前后端开发能力，从数据库设计、后端 API 开发到前端页面实现，能够独立打通全链路业务闭环。
               </p>
               <p>
@@ -28,7 +28,7 @@
               <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm" style="color: var(--color-text-muted)">
                 <span class="flex items-center gap-1.5">
                   <Icon name="lucide:briefcase" size="16" class="text-violet-400/60" />
-                  5 年经验
+                  {{ yearsOfExperience }} 年经验
                 </span>
                 <span class="flex items-center gap-1.5">
                   <Icon name="lucide:graduation-cap" size="16" class="text-emerald-400/60" />
@@ -36,7 +36,7 @@
                 </span>
                 <span class="flex items-center gap-1.5">
                   <Icon name="lucide:github" size="16" class="text-green-400/60" />
-                  <a href="https://github.com/ToniaXuu" target="_blank" class="hover:text-green-400 transition-colors">ToniaXuu</a>
+                  <a href="https://github.com/ToniaXuu" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors">ToniaXuu</a>
                 </span>
               </div>
             </div>
@@ -46,3 +46,7 @@
     </div>
   </section>
 </template>
+
+<script setup>
+const yearsOfExperience = getYearsOfExperience()
+</script>

@@ -72,12 +72,6 @@ const { data: page, pending } = await useAsyncData(`blog-${route.path}`, () =>
   { lazy: true }
 )
 
-const formatDate = (d) => {
-  if (!d) return ''
-  const date = new Date(d)
-  return date.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
-}
-
 // SSR 时如果文章不存在，抛出 404
 if (import.meta.server && !page.value) {
   throw createError({ statusCode: 404, message: '文章未找到' })

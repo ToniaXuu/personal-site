@@ -6,13 +6,14 @@
           <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-violet-500 flex items-center justify-center text-white text-sm font-bold">T</span>
           <div>
             <p class="text-sm font-semibold" style="color: var(--color-text)">ToniaXuu</p>
-            <p class="text-xs" style="color: var(--color-text-muted)">Full Stack Developer · 5 Years</p>
+            <p class="text-xs" style="color: var(--color-text-muted)">Full Stack Developer · {{ yearsOfExperience }} Years</p>
           </div>
         </div>
         <div class="flex items-center gap-4">
           <a
             href="https://github.com/ToniaXuu"
             target="_blank"
+            rel="noopener noreferrer"
             class="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
             style="color: var(--color-text-muted); border: 1px solid var(--color-border)"
             title="GitHub"
@@ -26,9 +27,9 @@
       <div class="mt-6 pt-6 text-center" style="border-top: 1px solid var(--divider-color)">
         <p class="text-xs" style="color: var(--color-text-subtle)">
           &copy; {{ year }} ToniaXuu. Built with
-          <a href="https://nuxt.com" target="_blank" class="transition-colors" style="color: var(--color-text-muted)" @mouseenter="$event.target.style.color = 'var(--color-accent-green)'" @mouseleave="$event.target.style.color = 'var(--color-text-muted)'">Nuxt</a>
+          <a href="https://nuxt.com" target="_blank" rel="noopener noreferrer" class="transition-colors" style="color: var(--color-text-muted)" @mouseenter="$event.target.style.color = 'var(--color-accent-green)'" @mouseleave="$event.target.style.color = 'var(--color-text-muted)'">Nuxt</a>
           &middot; Deployed on
-          <a href="https://vercel.com" target="_blank" class="transition-colors" style="color: var(--color-text-muted)" @mouseenter="$event.target.style.color = 'var(--color-accent-green)'" @mouseleave="$event.target.style.color = 'var(--color-text-muted)'">Vercel</a>
+          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="transition-colors" style="color: var(--color-text-muted)" @mouseenter="$event.target.style.color = 'var(--color-accent-green)'" @mouseleave="$event.target.style.color = 'var(--color-text-muted)'">Vercel</a>
         </p>
       </div>
     </div>
@@ -37,4 +38,5 @@
 
 <script setup>
 const year = new Date().getFullYear()
+const yearsOfExperience = getYearsOfExperience()
 </script>

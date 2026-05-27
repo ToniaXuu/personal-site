@@ -31,7 +31,9 @@ function handleClick(e) {
 function handleResize() { resize() }
 
 const PARTICLE_COUNT = 120
+const PARTICLE_COUNT_MOBILE = 40
 const MAX_DIST = 160
+const MAX_DIST_MOBILE = 100
 const MOUSE_RADIUS = 150
 const MOUSE_CONNECT_RADIUS = 200
 
@@ -165,7 +167,9 @@ function init() {
   ctx = canvas.value.getContext('2d')
   resize()
   particles.length = 0
-  for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle(true))
+  const isMobile = w < 768
+  const count = isMobile ? PARTICLE_COUNT_MOBILE : PARTICLE_COUNT
+  for (let i = 0; i < count; i++) particles.push(new Particle(true))
   animate()
 }
 
@@ -178,6 +182,7 @@ function resize() {
 function animate() {
   frame++
   const isDark = document.documentElement.classList.contains('dark')
+  const maxDist = w < 768 ? MAX_DIST_MOBILE : MAX_DIST
 
   // 鼠标平滑缓动跟随
   mouse.x += (mouse.tx - mouse.x) * 0.07
@@ -207,8 +212,8 @@ function animate() {
       const dx = p.x - q.x
       const dy = p.y - q.y
       const dist = Math.sqrt(dx * dx + dy * dy)
-      if (dist < MAX_DIST) {
-        const ratio = 1 - dist / MAX_DIST
+      if (dist < maxDist) {
+        const ratio = 1 - dist / maxDist
         const alpha = isDark ? ratio * 0.1 : ratio * 0.16
         ctx.beginPath()
         ctx.moveTo(p.x, p.y)
