@@ -2,8 +2,7 @@
   <div>
     <ResumeHeroSection />
     <ResumeAboutSection />
-    <ResumeTimelineSection />
-    <ResumeSkillsSection />
+    <ResumeInterestsSection />
     <ResumeProjectsSection />
     <ResumeNewsSection />
   </div>

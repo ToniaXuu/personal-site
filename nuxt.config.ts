@@ -6,19 +6,19 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'ToniaXuu | Full Stack Developer',
+      title: 'ToniaXuu | 造点有趣的东西',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'ToniaXuu - Full Stack Developer, 5 years of experience in Vue/Java/Microservices.' },
-        { name: 'keywords', content: 'ToniaXuu, Full Stack Developer, Vue, Java, Spring Boot, Frontend, Backend' },
-        { property: 'og:title', content: 'ToniaXuu | Full Stack Developer' },
-        { property: 'og:description', content: '5 years full stack development experience, focused on Vue/Java/Microservices architecture' },
+        { name: 'description', content: 'ToniaXuu 的数字空间 —— 一个沉迷 AI 的开发者，用代码造点有趣的东西。探索 AI Agent、Vibe Coding 和各种酷炫项目。' },
+        { name: 'keywords', content: 'ToniaXuu, AI Agent, Vibe Coding, 开发者, 个人网站, Nuxt, Vue, Tauri' },
+        { property: 'og:title', content: 'ToniaXuu | 造点有趣的东西' },
+        { property: 'og:description', content: '一个沉迷 AI 的开发者，用代码造点有趣的东西。探索 AI Agent、Vibe Coding 和各种酷炫项目。' },
         { property: 'og:type', content: 'website' },
         { property: 'og:image', content: '/avatar.jpg' },
         { name: 'twitter:card', content: 'summary' },
-        { name: 'twitter:title', content: 'ToniaXuu | Full Stack Developer' },
-        { name: 'twitter:description', content: 'Full Stack Developer, focused on Vue/Java/Microservices' },
+        { name: 'twitter:title', content: 'ToniaXuu | 造点有趣的东西' },
+        { name: 'twitter:description', content: '一个沉迷 AI 的开发者，用代码造点有趣的东西' },
       ],
       script: [
         {

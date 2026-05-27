@@ -8,10 +8,10 @@
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm mb-8"
         style="border: 1px solid var(--color-border); background: var(--glass-bg); color: var(--color-text-muted)">
         <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500" />
         </span>
-        开放工作机会 · Open to Work
+        正在折腾 AI Agent · Vibe Coding
       </div>
 
       <!-- Avatar -->
@@ -31,11 +31,12 @@
 
       <!-- Subtitle -->
       <p class="text-xl sm:text-2xl max-w-2xl mx-auto mb-4 leading-relaxed" style="color: var(--color-text-muted)">
-        全栈工程师 · {{ yearsOfExperience }} 年开发经验
+        一个沉迷 AI 的开发者 · 用代码造点有趣的东西
       </p>
       <p class="text-base max-w-xl mx-auto mb-10 leading-relaxed" style="color: var(--color-text-subtle)">
-        专注 Vue 全栈开发与 Java 微服务架构，热衷构建优雅、高性能的 Web 应用。
-        从前端交互到后端架构，打通数据全链路。
+        全面拥抱 Vibe Coding，让 AI 成为我的编程搭档。
+        喜欢折腾各种新工具，用技术把想法变成现实。
+        这里是我的数字空间，记录探索与创造的过程。
       </p>
 
       <!-- CTA -->
@@ -45,33 +46,33 @@
           class="px-6 py-3 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-medium text-sm hover:from-green-400 hover:to-emerald-500 transition-all shadow-lg shadow-green-500/20 hover:shadow-green-500/30 hover:scale-105"
         >
           <Icon name="lucide:rocket" size="16" class="inline mr-1.5 -mt-0.5" />
-          查看项目
+          看看我在造什么
         </a>
         <a
-          href="#about"
+          href="/blog"
           class="px-6 py-3 rounded-full font-medium text-sm transition-all hover:scale-105"
           style="border: 1px solid var(--color-border); color: var(--color-text-muted)"
           @mouseenter="$event.currentTarget.style.color = 'var(--color-text)'; $event.currentTarget.style.borderColor = 'var(--color-border-hover)'"
           @mouseleave="$event.currentTarget.style.color = 'var(--color-text-muted)'; $event.currentTarget.style.borderColor = 'var(--color-border)'"
         >
-          <Icon name="lucide:user" size="16" class="inline mr-1.5 -mt-0.5" />
-          了解更多
+          <Icon name="lucide:pen-line" size="16" class="inline mr-1.5 -mt-0.5" />
+          读读博客
         </a>
       </div>
 
       <!-- Quick stats -->
       <div class="mt-16 flex flex-wrap justify-center gap-8 text-sm" style="color: var(--color-text-subtle)">
         <div class="flex items-center gap-2">
-          <Icon name="lucide:calendar" size="16" class="text-green-400/60" />
-          <span><span class="font-semibold" style="color: var(--color-text)">{{ yearsOfExperience }}</span> 年经验</span>
+          <Icon name="lucide:bot" size="16" class="text-violet-400/60" />
+          <span><span class="font-semibold" style="color: var(--color-text)">AI</span> 重度用户</span>
         </div>
         <div class="flex items-center gap-2">
-          <Icon name="lucide:code-2" size="16" class="text-violet-400/60" />
-          <span><span class="font-semibold" style="color: var(--color-text)">6+</span> 个核心项目</span>
+          <Icon name="lucide:code-2" size="16" class="text-green-400/60" />
+          <span><span class="font-semibold" style="color: var(--color-text)">4+</span> 个个人项目</span>
         </div>
         <div class="flex items-center gap-2">
-          <Icon name="lucide:layers" size="16" class="text-green-400/60" />
-          <span>全栈开发</span>
+          <Icon name="lucide:sparkles" size="16" class="text-amber-400/60" />
+          <span>Vibe Coder</span>
         </div>
       </div>
     </div>
@@ -80,10 +81,6 @@
     <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style="background: var(--hero-fade)" />
   </section>
 </template>
-
-<script setup>
-const yearsOfExperience = getYearsOfExperience()
-</script>
 
 <style scoped>
 .hero-glow {

@@ -16,10 +16,9 @@
       <div class="hidden sm:flex items-center gap-1 text-sm">
         <NuxtLink to="/" class="nav-link px-3 py-1.5 rounded-lg" exact-active-class="">首页</NuxtLink>
         <NuxtLink to="/#about" class="nav-link px-3 py-1.5 rounded-lg">关于</NuxtLink>
-        <NuxtLink to="/#experience" class="nav-link px-3 py-1.5 rounded-lg">经历</NuxtLink>
-        <NuxtLink to="/#skills" class="nav-link px-3 py-1.5 rounded-lg">技能</NuxtLink>
+        <NuxtLink to="/#interests" class="nav-link px-3 py-1.5 rounded-lg">兴趣</NuxtLink>
         <NuxtLink to="/#projects" class="nav-link px-3 py-1.5 rounded-lg">项目</NuxtLink>
-        <NuxtLink to="/#news" class="nav-link px-3 py-1.5 rounded-lg">动态</NuxtLink>
+        <NuxtLink to="/#news" class="nav-link px-3 py-1.5 rounded-lg">折腾</NuxtLink>
         <NuxtLink to="/blog" class="nav-link px-3 py-1.5 rounded-lg">博客</NuxtLink>
       </div>
 
@@ -56,10 +55,9 @@
       >
         <NuxtLink to="/" class="mobile-nav-item text-sm" exact-active-class="" @click="mobileOpen = false">首页</NuxtLink>
         <NuxtLink to="/#about" class="mobile-nav-item text-sm" @click="mobileOpen = false">关于</NuxtLink>
-        <NuxtLink to="/#experience" class="mobile-nav-item text-sm" @click="mobileOpen = false">经历</NuxtLink>
-        <NuxtLink to="/#skills" class="mobile-nav-item text-sm" @click="mobileOpen = false">技能</NuxtLink>
+        <NuxtLink to="/#interests" class="mobile-nav-item text-sm" @click="mobileOpen = false">兴趣</NuxtLink>
         <NuxtLink to="/#projects" class="mobile-nav-item text-sm" @click="mobileOpen = false">项目</NuxtLink>
-        <NuxtLink to="/#news" class="mobile-nav-item text-sm" @click="mobileOpen = false">动态</NuxtLink>
+        <NuxtLink to="/#news" class="mobile-nav-item text-sm" @click="mobileOpen = false">折腾</NuxtLink>
         <NuxtLink to="/blog" class="mobile-nav-item text-sm" @click="mobileOpen = false">博客</NuxtLink>
         <a href="https://github.com/ToniaXuu" target="_blank" rel="noopener noreferrer" class="mobile-nav-item text-sm flex items-center gap-2">
           <Icon name="lucide:github" size="16" /> GitHub

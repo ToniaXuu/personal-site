@@ -6,7 +6,7 @@
           <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-violet-500 flex items-center justify-center text-white text-sm font-bold">T</span>
           <div>
             <p class="text-sm font-semibold" style="color: var(--color-text)">ToniaXuu</p>
-            <p class="text-xs" style="color: var(--color-text-muted)">Full Stack Developer · {{ yearsOfExperience }} Years</p>
+            <p class="text-xs" style="color: var(--color-text-muted)">造点有趣的东西 · Making cool stuff</p>
           </div>
         </div>
         <div class="flex items-center gap-4">
@@ -38,5 +38,4 @@
 
 <script setup>
 const year = new Date().getFullYear()
-const yearsOfExperience = getYearsOfExperience()
 </script>
