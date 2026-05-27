@@ -145,7 +145,7 @@ class Particle {
       const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, glowR)
       grad.addColorStop(0, color)
       grad.addColorStop(0.35, color + '66')
-      grad.addColorStop(1, 'transparent')
+      grad.addColorStop(1, color + '00')
       ctx.beginPath()
       ctx.arc(this.x, this.y, glowR, 0, Math.PI * 2)
       ctx.fillStyle = grad
@@ -196,7 +196,7 @@ function animate() {
     const glowColor = isDark ? '255,255,255' : '99,102,241'
     glowGrad.addColorStop(0, `rgba(${glowColor},0.06)`)
     glowGrad.addColorStop(0.4, `rgba(${glowColor},0.03)`)
-    glowGrad.addColorStop(1, 'transparent')
+    glowGrad.addColorStop(1, `rgba(${glowColor},0)`)
     ctx.beginPath()
     ctx.arc(mouse.x, mouse.y, 160, 0, Math.PI * 2)
     ctx.fillStyle = glowGrad
