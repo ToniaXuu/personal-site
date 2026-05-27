@@ -361,3 +361,21 @@ section + section::before {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
 }
+
+/* ===== 主题切换圆形扩散动画（View Transition API） ===== */
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: vt-reveal-in 0.45s ease-in-out forwards;
+}
+
+@keyframes vt-reveal-in {
+  from {
+    clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+  to {
+    clip-path: circle(150% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+}

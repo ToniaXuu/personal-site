@@ -21,7 +21,7 @@
           :key="opt.value"
           class="theme-option"
           :class="{ active: mode === opt.value }"
-          @click="selectMode(opt.value)"
+          @click="selectMode(opt.value, $event)"
         >
           <Icon :name="opt.icon" size="16" />
           <span>{{ opt.label }}</span>
@@ -103,8 +103,8 @@ const currentLabel = computed(() => {
   return options.find(o => o.value === mode.value)?.label || '切换主题'
 })
 
-function selectMode(m) {
-  setMode(m)
+function selectMode(m, event) {
+  setMode(m, event)
   // 选择自定义时间时保持菜单打开，展示时间选择器
   if (m !== 'custom') {
     open.value = false

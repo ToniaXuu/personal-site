@@ -31,7 +31,7 @@ export const useTheme = () => {
     return currentMinutes >= darkMinutes && currentMinutes < lightMinutes
   }
 
-  function updateTheme() {
+  function applyTheme() {
     if (!import.meta.client) return
     let dark
     switch (mode.value) {
@@ -46,28 +46,57 @@ export const useTheme = () => {
     document.documentElement.classList.toggle('light', !dark)
   }
 
-  function setMode(m) {
-    mode.value = m
-    updateTheme()
+  /**
+   * 带圆形扩散动画的主题切换
+   * @param x - 动画起始 X 坐标（视口坐标）
+   * @param y - 动画起始 Y 坐标（视口坐标）
+   */
+  function animateThemeSwitch(x?: number, y?: number) {
+    if (!import.meta.client) return
+
+    // 设置动画起始坐标
+    if (x !== undefined && y !== undefined) {
+      document.documentElement.style.setProperty('--vt-x', `${x}px`)
+      document.documentElement.style.setProperty('--vt-y', `${y}px`)
+    }
+
+    // 使用 View Transition API
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        applyTheme()
+      })
+    } else {
+      // 降级：不支持 View Transition 的浏览器直接切换
+      applyTheme()
+    }
   }
 
-  function setCustomTime(lightStart, darkStart) {
+  function setMode(m: string, event?: MouseEvent) {
+    mode.value = m
+    if (event) {
+      animateThemeSwitch(event.clientX, event.clientY)
+    } else {
+      applyTheme()
+    }
+  }
+
+  function setCustomTime(lightStart: string, darkStart: string) {
     customTime.value = { lightStart, darkStart }
-    if (mode.value === 'custom') updateTheme()
+    if (mode.value === 'custom') applyTheme()
   }
 
   if (import.meta.client) {
     onMounted(() => {
-      updateTheme()
+      applyTheme()
 
       const mq = window.matchMedia('(prefers-color-scheme: dark)')
       const handler = () => {
-        if (mode.value === 'system') updateTheme()
+        if (mode.value === 'system') applyTheme()
       }
       mq.addEventListener('change', handler)
 
       const timer = setInterval(() => {
-        if (mode.value === 'custom') updateTheme()
+        if (mode.value === 'custom') applyTheme()
       }, 60000)
 
       onUnmounted(() => {
@@ -77,5 +106,5 @@ export const useTheme = () => {
     })
   }
 
-  return { mode, customTime, isDark, setMode, setCustomTime, updateTheme }
+  return { mode, customTime, isDark, setMode, setCustomTime, updateTheme: applyTheme }
 }
